@@ -6,6 +6,7 @@ import Product from './Header/Product'
 import About from './Header/About'
 import Contact from './Header/Contact'
 import Login from './Header/Login'
+import Footer from './Footer/Footer'
 
 const MyRoute = () => {
     const Layout = () =>{
@@ -13,6 +14,7 @@ const MyRoute = () => {
             <div>
                 <NavBar/>
                 <Outlet/>
+                <Footer/>
             </div>
         )
     }

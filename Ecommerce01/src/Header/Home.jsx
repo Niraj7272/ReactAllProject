@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className='relative'>
       <img src="src/assets/menfashion.jpg" alt="" className='h-full w-full'/>
-      <div className='bg-gray-500 text-[1.5rem] text-white absolute top-[22.6rem] left-[46rem] w-[13rem] h-[3rem] pl-[3rem] font-bold'>
+      <div className='bg-gray-900 text-[1.5rem] text-white absolute top-[22.6rem] left-[46rem] w-[13rem] h-[3rem] pl-[3rem] font-bold'>
         <NavLink to="/shop">Shop Now</NavLink>
       </div>
       <div className='absolute top-0 right-0'>
