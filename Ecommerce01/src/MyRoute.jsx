@@ -7,6 +7,7 @@ import About from './Header/About'
 import Contact from './Header/Contact'
 import Login from './Header/Login'
 import Footer from './Footer/Footer'
+import SignUp from './Header/SignUp'
 
 const MyRoute = () => {
     const Layout = () =>{
@@ -46,6 +47,10 @@ const MyRoute = () => {
             {
                 path:"/login",
                 element:<Login/>
+            },
+            {
+                path:"/signUp",
+                element:<SignUp/>
             }
         ]
     )
