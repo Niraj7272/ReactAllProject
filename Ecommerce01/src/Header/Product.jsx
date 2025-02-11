@@ -2,7 +2,14 @@ import React from 'react'
 
 const Product = () => {
   return (
-    <div>Product</div>
+      <div className='bg-blue-300 h-auto m-0'>
+        <div className='bg-red-400 h-[20rem] w-[15rem] m-[2rem]'>
+            <img src="src/assets/tshirtblack.jpg" alt="" className='h-[15rem]' />
+        </div>
+        <div className='bg-red-400 h-[20rem] w-[15rem] m-[2rem]'>
+            <img src="src/assets/tshirtblack.jpg" alt="" className='h-[15rem]' />
+        </div>
+      </div>
   )
 }
 
