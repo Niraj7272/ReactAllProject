@@ -13,7 +13,7 @@ const NavBar = () => {
         </div>
         <div className='flex'>
             <img src="https://lzd-img-global.slatic.net/us/domino/3b870cb043c7f8a9741cbf66329e294e.png" alt="" className='h-[3rem] ml-[5rem] mt-[1rem]' />
-            <input type="text" className='bg-white h-[2.5rem] w-[40rem] ml-[5rem] mt-[1rem]' />
+            <input type="text"  className='bg-white h-[2.5rem] w-[40rem] ml-[5rem] mt-[1rem]' />
         </div>
     </div>
   )
