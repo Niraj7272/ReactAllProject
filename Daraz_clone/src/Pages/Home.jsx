@@ -78,7 +78,39 @@ const Home = () => {
     {
       name:"Switches",
       image:"src/assets/Category/switches.webp"
-    }
+    },
+    {
+      name:"Rice",
+      image:"src/assets/Category/rice.webp"
+    },
+    {
+      name:"MakeUp Remover",
+      image:"src/assets/Category/makeupremover.webp"
+    },
+    {
+      name:"Infant(0-3)",
+      image:"src/assets/Category/infant.webp"
+    },
+    {
+      name:"Hall Stand",
+      image:"src/assets/Category/hallstand.webp"
+    },
+    {
+      name:"Bracelet",
+      image:"src/assets/Category/bracetete.webp"
+    },
+    {
+      name:"Broom",
+      image:"src/assets/Category/broom.webp"
+    },
+    {
+      name:"Switches",
+      image:"src/assets/Category/switches.webp"
+    },
+    {
+      name:"Bracelet",
+      image:"src/assets/Category/bracetete.webp"
+    },
   ]
 
 
@@ -114,14 +146,14 @@ const Home = () => {
       })}
       </div>
           <h1 className='mt-[3rem] text-[1.7rem] text-gray-600'>Categories</h1>
-      <div className='bg-white grid grid-cols-8 gap-1 h-[10rem] '>
+      <div className='bg-white grid grid-cols-8 gap-[0.1rem] h-[10rem]'>
         {categoryData.map((item,i)=>{
           return(
-            <div className='w-[9rem]'>
+            <div className='w-[10rem] border-[1px] border-gray-400 hover:shadow-2xl hover:border-gray-500'>
             <div>
                 <img src={item.image} alt="" className='h-[5rem] ml-[2rem] mt-[1.5rem]' />
             </div>
-            <div>
+            <div className='ml-[2rem] text-black'>
                 <h1>{item.name}</h1>
             </div>
             </div>
