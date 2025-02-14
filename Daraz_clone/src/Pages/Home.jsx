@@ -46,6 +46,41 @@ const Home = () => {
     }
   ]
 
+  let categoryData =[
+    {
+      name:"MakeUp Remover",
+      image:"src/assets/Category/makeupremover.webp"
+    },
+    {
+      name:"Bracelet",
+      image:"src/assets/Category/bracetete.webp"
+    },
+    {
+      name:"Broom",
+      image:"src/assets/Category/broom.webp"
+    },
+    {
+      name:"Switches",
+      image:"src/assets/Category/switches.webp"
+    },
+    {
+      name:"Hall Stand",
+      image:"src/assets/Category/hallstand.webp"
+    },
+    {
+      name:"Infant(0-3)",
+      image:"src/assets/Category/infant.webp"
+    },
+    {
+      name:"Rice",
+      image:"src/assets/Category/rice.webp"
+    },
+    {
+      name:"Switches",
+      image:"src/assets/Category/switches.webp"
+    }
+  ]
+
 
   return (
     <div className='bg-gray-100 h-[100rem]'>
@@ -63,7 +98,6 @@ const Home = () => {
       <div className='grid grid-cols-6 gap-4'>
       {productData.map((item,i)=>{
         return(
-         
          <div className='mt-[1rem]  bg-white h-[20rem] relative hover:shadow-2xl hover:border-gray-600 cursor-pointer'>
            <img src={item.image} alt="" className='h-[12rem] w-[13rem]' />
            <div className='absolute text-black text-[1rem] m-1.5'>
@@ -71,7 +105,7 @@ const Home = () => {
              <h1 className='text-orange-600 text-[1.3rem]'>Rs.{item.price}</h1>
              <div className='flex'>
              <h3 className='line-through text-gray-600'>Rs.{item.realPrice}</h3>
-             <span className=''>-{item.percent}</span>
+             <span>-{item.percent}</span>
              </div>
            </div>
          </div>
@@ -79,9 +113,20 @@ const Home = () => {
         )
       })}
       </div>
-
-      <div>
-
+          <h1 className='mt-[3rem] text-[1.7rem] text-gray-600'>Categories</h1>
+      <div className='bg-white grid grid-cols-8 gap-1 h-[10rem] '>
+        {categoryData.map((item,i)=>{
+          return(
+            <div className='w-[9rem]'>
+            <div>
+                <img src={item.image} alt="" className='h-[5rem] ml-[2rem] mt-[1.5rem]' />
+            </div>
+            <div>
+                <h1>{item.name}</h1>
+            </div>
+            </div>
+          )
+        })}
       </div>
     </div>
     </div>
