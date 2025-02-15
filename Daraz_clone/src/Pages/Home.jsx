@@ -130,9 +130,84 @@ const Home = () => {
     },
   ]
 
+  let allProduct = [
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      percent:"30%",
+      realPrice:"2000",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    },
+    {
+      name:"WildStone Premium Perfume...",
+      price:"1277",
+      realPrice:"2000",
+      percent:"30%",
+      ratingNumber:(71),
+      image:"src/assets/AllProducts/wildStonePerfume.webp"
+    }
+  ]
+
 
   return (
-    <div className='bg-gray-100 h-[100rem]'>
+    <div className='bg-gray-100 h-[138rem]'>
     <div className=' h-[32rem]'>
       <img src="src/assets/70d96363-eff1-41d6-beb4-0d24afc1ba70_NP-1976-688.png_2200x2200q80.png_.webp" alt="" className='h-[22rem] ml-[4rem]' />
     </div>
@@ -179,6 +254,27 @@ const Home = () => {
           )
         })}
       </div>
+
+        <h1  className='mt-[3rem] text-[1.7rem] text-gray-600'>Just For You</h1>
+        <div className='grid grid-cols-6 gap-4 pb-[4rem]'>
+      {allProduct.map((item,i)=>{
+        return(
+          <NavLink to="#">
+         <div className='mt-[1rem]  bg-white h-[20rem] relative hover:shadow-2xl hover:border-gray-600 cursor-pointer'>
+           <img src={item.image} alt="" className='h-[12rem] w-[13rem]' />
+           <div className='absolute text-black text-[1rem] m-1.5'>
+             <h1>{item.name}</h1>
+             <h1 className='text-orange-600 text-[1.3rem]'>Rs.{item.price}</h1>
+             <div className='flex'>
+             <h3 className='line-through text-gray-600'>Rs.{item.realPrice}</h3>
+             <span>-{item.percent}</span>
+             </div>
+           </div>
+         </div>
+         </NavLink>
+        )
+      })}
+        </div>
     </div>
     </div>
   )
