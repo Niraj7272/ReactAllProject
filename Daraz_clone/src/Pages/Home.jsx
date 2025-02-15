@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   let productData = [
@@ -49,67 +50,83 @@ const Home = () => {
   let categoryData =[
     {
       name:"MakeUp Remover",
-      image:"src/assets/Category/makeupremover.webp"
+      image:"src/assets/Category/makeupremover.webp",
+      link:"/makeUp"
     },
     {
       name:"Bracelet",
-      image:"src/assets/Category/bracetete.webp"
+      image:"src/assets/Category/bracetete.webp",
+      link:"/bracelete"
     },
     {
       name:"Broom",
-      image:"src/assets/Category/broom.webp"
+      image:"src/assets/Category/broom.webp",
+      link:"/broom"
     },
     {
       name:"Switches",
-      image:"src/assets/Category/switches.webp"
+      image:"src/assets/Category/switches.webp",
+      link:"/MakeUp"
     },
     {
       name:"Hall Stand",
-      image:"src/assets/Category/hallstand.webp"
+      image:"src/assets/Category/hallstand.webp",
+      link:"/MakeUp"
     },
     {
       name:"Infant(0-3)",
-      image:"src/assets/Category/infant.webp"
+      image:"src/assets/Category/infant.webp",
+      link:"/MakeUp"
     },
     {
       name:"Rice",
-      image:"src/assets/Category/rice.webp"
+      image:"src/assets/Category/rice.webp",
+      link:"/MakeUp"
     },
     {
       name:"Switches",
-      image:"src/assets/Category/switches.webp"
+      image:"src/assets/Category/switches.webp",
+      link:"/MakeUp"
     },
     {
       name:"Rice",
-      image:"src/assets/Category/rice.webp"
+      image:"src/assets/Category/rice.webp",
+      link:"/MakeUp"
     },
     {
       name:"MakeUp Remover",
-      image:"src/assets/Category/makeupremover.webp"
+      image:"src/assets/Category/makeupremover.webp",
+      link:"/MakeUp"
     },
     {
       name:"Infant(0-3)",
-      image:"src/assets/Category/infant.webp"
+      image:"src/assets/Category/infant.webp",
+      link:"/MakeUp"
     },
     {
       name:"Hall Stand",
-      image:"src/assets/Category/hallstand.webp"
+      image:"src/assets/Category/hallstand.webp",
+      link:"/MakeUp"
     },
     {
       name:"Bracelet",
-      image:"src/assets/Category/bracetete.webp"
+      image:"src/assets/Category/bracetete.webp",
+      link:"/MakeUp"
     },
     {
       name:"Broom",
-      image:"src/assets/Category/broom.webp"
+      image:"src/assets/Category/broom.webp",
+      link:"/MakeUp"
     },
     {
       name:"Switches",
-      image:"src/assets/Category/switches.webp"
+      image:"src/assets/Category/switches.webp",
+      link:"/MakeUp"
     },
     {
       name:"Bracelet",
-      image:"src/assets/Category/bracetete.webp"
+      image:"src/assets/Category/bracetete.webp",
+      link:"/MakeUp"
     },
   ]
 
@@ -119,7 +136,7 @@ const Home = () => {
     <div className=' h-[32rem]'>
       <img src="src/assets/70d96363-eff1-41d6-beb4-0d24afc1ba70_NP-1976-688.png_2200x2200q80.png_.webp" alt="" className='h-[22rem] ml-[4rem]' />
     </div>
-    <h1 className='text-[1.5rem] text-gray-700 ml-[4rem] mb-[0.4rem]'>Flash Sale</h1>
+    <h1 className='text-[1.5rem] text-gray-700 ml-[3rem] mb-[0.4rem]'>Flash Sale</h1>
     <div className='bg-white text-orange-600 ml-[3rem] mr-[3rem] h-[26rem]'>
       <div className='flex justify-between  pt-[0.7rem]'>
           <h2 className='ml-[1rem] mt-[0.5rem]'>On Sale Now</h2>
@@ -146,17 +163,19 @@ const Home = () => {
       })}
       </div>
           <h1 className='mt-[3rem] text-[1.7rem] text-gray-600'>Categories</h1>
-      <div className='bg-white grid grid-cols-8 gap-[0.1rem] h-[10rem]'>
+      <div className='grid grid-cols-8 '>
         {categoryData.map((item,i)=>{
           return(
-            <div className='w-[10rem] border-[1px] border-gray-400 hover:shadow-2xl hover:border-gray-500'>
+            <NavLink to={item.link}>
+            <div className='bg-white gap-[0.1rem] h-[10rem] w-[10rem] border-[1px] border-gray-300 hover:shadow-2xl hover:border-gray-500'>
             <div>
                 <img src={item.image} alt="" className='h-[5rem] ml-[2rem] mt-[1.5rem]' />
             </div>
-            <div className='ml-[2rem] text-black'>
+            <div className='ml-[2rem] mr-[2rem] text-black'>
                 <h1>{item.name}</h1>
             </div>
             </div>
+            </NavLink>
           )
         })}
       </div>

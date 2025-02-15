@@ -7,6 +7,8 @@ import BecomeASeller from './Pages/BecomeASeller'
 import HelpAndSupport from './Pages/HelpAndSupport'
 import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
+import MakeUp from './Category/MakeUp'
+import Footer from './Footer'
 
 
 const MyRoute = () => {
@@ -15,6 +17,7 @@ const MyRoute = () => {
             <div>
                 <NavBar/>
                 <Outlet/>
+                <Footer/>
             </div>
         )
     }
@@ -48,6 +51,10 @@ const MyRoute = () => {
                     {
                         path:"/signUp",
                         element:<SignUp/>
+                    },
+                    {
+                        path:"/makeUp",
+                        element:<MakeUp/>
                     }
                 ]
             }
