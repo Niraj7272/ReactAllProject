@@ -14,6 +14,8 @@ const NavBar = () => {
         <div className='flex'>
             <img src="https://lzd-img-global.slatic.net/us/domino/3b870cb043c7f8a9741cbf66329e294e.png" alt="" className='h-[3rem] ml-[5rem] mt-[1rem]' />
             <input type="text"  className='bg-white h-[2.5rem] w-[40rem] ml-[5rem] mt-[1rem]' />
+            <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=D35400" alt="" className='h-[2.5rem] mt-[1rem] bg-orange-200 p-[0.5rem] cursor-pointer' />
+            <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=FFFFFF" alt=""  className='h-[1.7rem] mt-[1.3rem] ml-[2rem]'/>
         </div>
     </div>
   )

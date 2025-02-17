@@ -9,6 +9,9 @@ import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
 import MakeUp from './Category/MakeUp'
 import Footer from './Footer'
+import Samba from './Category/Samba'
+import Contact from './Pages/Contact'
+
 
 
 const MyRoute = () => {
@@ -55,7 +58,17 @@ const MyRoute = () => {
                     {
                         path:"/makeUp",
                         element:<MakeUp/>
+                    },
+                    {
+                        path:"/samba",
+                        element:<Samba/>
+                    },
+                    {
+                        path:"/contact",
+                        element:<Contact></Contact>
+        
                     }
+                    
                 ]
             }
         ]

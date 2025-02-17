@@ -8,6 +8,7 @@ const Home = () => {
       price:1399,
       realPrice:1700,
       percent:"20%",
+      link:"/samba",
       image:"src/assets/7ba5486ce9bde718f24d3738b64c677a.jpg_400x400q80.jpg_.webp"
     },
     {
@@ -210,6 +211,10 @@ const Home = () => {
     <div className='bg-gray-100 h-[138rem]'>
     <div className=' h-[32rem]'>
       <img src="src/assets/70d96363-eff1-41d6-beb4-0d24afc1ba70_NP-1976-688.png_2200x2200q80.png_.webp" alt="" className='h-[22rem] ml-[4rem]' />
+      <img src="https://img.lazcdn.com/us/domino/1c5bc9e9-1cda-418a-8951-d8f34f458cda_NP-1920-500.gif_2200x2200q80.gif" alt=""  className='h-[30rem]'/>
+    </div>
+    <div>
+      
     </div>
     <h1 className='text-[1.5rem] text-gray-700 ml-[3rem] mb-[0.4rem]'>Flash Sale</h1>
     <div className='bg-white text-orange-600 ml-[3rem] mr-[3rem] h-[26rem]'>
@@ -222,7 +227,8 @@ const Home = () => {
       <div className='grid grid-cols-6 gap-4'>
       {productData.map((item,i)=>{
         return(
-         <div className='mt-[1rem]  bg-white h-[20rem] relative hover:shadow-2xl hover:border-gray-600 cursor-pointer'>
+          <NavLink to={item.link}>
+         <div className='mt-[1rem]  bg-white h-[20rem] relative hover:shadow-2xl hover:border-gray-600'>
            <img src={item.image} alt="" className='h-[12rem] w-[13rem]' />
            <div className='absolute text-black text-[1rem] m-1.5'>
              <h1>{item.name}</h1>
@@ -233,7 +239,7 @@ const Home = () => {
              </div>
            </div>
          </div>
-         
+         </NavLink>
         )
       })}
       </div>

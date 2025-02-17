@@ -12,7 +12,7 @@ const Footer = () => {
                     <NavLink to="#">Help Center</NavLink><br />
                     <NavLink to="#">How to Buy</NavLink><br />
                     <NavLink to="#">Returns & Refunds</NavLink><br />
-                    <NavLink to="#">Contact Us</NavLink>
+                    <NavLink to="/contact">Contact Us</NavLink>
                 </div>
                 <div className='ml-[10rem]'>
                 <h1 className='text-[1.3rem] mb-[0.6rem]'>Daraz</h1>
