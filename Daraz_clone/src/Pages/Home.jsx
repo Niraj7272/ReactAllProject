@@ -209,13 +209,16 @@ const Home = () => {
 
   return (
     <div className='bg-gray-100 h-[138rem]'>
+      <div className='flex'>
     <div className=' h-[32rem]'>
-      <img src="src/assets/70d96363-eff1-41d6-beb4-0d24afc1ba70_NP-1976-688.png_2200x2200q80.png_.webp" alt="" className='h-[22rem] ml-[4rem]' />
+      <img src="src/assets/70d96363-eff1-41d6-beb4-0d24afc1ba70_NP-1976-688.png_2200x2200q80.png_.webp" alt="" className='h-[21.5rem] ml-[4rem]' />
       <img src="https://img.lazcdn.com/us/domino/1c5bc9e9-1cda-418a-8951-d8f34f458cda_NP-1920-500.gif_2200x2200q80.gif" alt=""  className='h-[30rem]'/>
     </div>
-    <div>
-      
+    <div className='mr-[5.7rem] bg-orange-100 h-[21.5rem]'>
+      <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01tceZus1IewufOY1tZ_!!6000000000919-2-tps-364-316.png" alt="" className='h-[10rem] w-[21rem] mt-[3rem]' />
     </div>
+    </div>
+    
     <h1 className='text-[1.5rem] text-gray-700 ml-[3rem] mb-[0.4rem]'>Flash Sale</h1>
     <div className='bg-white text-orange-600 ml-[3rem] mr-[3rem] h-[26rem]'>
       <div className='flex justify-between  pt-[0.7rem]'>
