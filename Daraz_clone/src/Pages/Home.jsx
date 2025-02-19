@@ -219,7 +219,9 @@ const Home = () => {
       <img src="https://img.lazcdn.com/us/domino/1ee015d6a5c62fd0339c88c657c1c183.jpg_120x120q80.jpg" alt="" className='h-[2.5rem] mt-[0.2rem]' />
       <h1 className='mt-[0.5rem] ml-[1rem]'>Download the App</h1>
       </div>
-      <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01tceZus1IewufOY1tZ_!!6000000000919-2-tps-364-316.png" alt="" className='h-[10rem] w-[21rem] mt-[0.5rem]' />
+      <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01tceZus1IewufOY1tZ_!!6000000000919-2-tps-364-316.png" alt="" className='h-[10rem] w-[21rem] mt-[0.5rem] relative' />
+      <h3 className='absolute top-[11.5rem] left-[67rem] text-[0.8rem] text-white'>4.8 Rated</h3>
+      <h1 className='absolute top-[12.5rem] font-bold text-[0.8rem] text-white left-[69rem]'>Download App</h1>
     </div>
     </div>
     
