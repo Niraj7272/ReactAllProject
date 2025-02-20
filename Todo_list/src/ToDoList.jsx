@@ -10,10 +10,12 @@ const TODoList = ()=>{
             <div className="flex justify-between">
                 <div className="bg-white flex justify-between w-[30rem] ml-[1.5rem] border-[1px]">
                     <input type="text" className="w-[30rem]"/>
-                    <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className="h-[2rem] bg-orange-300 p-1" />
+                    <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className="h-[2rem] bg-orange-300 p-1 cursor-pointer" />
                 </div>
-                <div className="bg-green-600 mr-[10rem] w-[12rem] pl-[5rem] pt-[0.3rem] font-bold text-white cursor-pointer">
-                    <button>Add</button>
+                <div className="bg-green-600 mr-[10rem] w-[12rem] pl-[5rem] pt-[0.3rem] font-bold text-white cursor-pointer hover:bg-green-800">
+                    <button onClick={()=>{
+                        setShow(true)
+                    }}>Add</button>
                 </div>
             </div>
             <div className="h-[25rem] bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
