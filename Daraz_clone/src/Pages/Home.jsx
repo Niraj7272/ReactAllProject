@@ -222,6 +222,24 @@ const Home = () => {
       <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01tceZus1IewufOY1tZ_!!6000000000919-2-tps-364-316.png" alt="" className='h-[10rem] w-[21rem] mt-[0.5rem] relative' />
       <h3 className='absolute top-[11.5rem] left-[67rem] text-[0.8rem] text-white'>4.8 Rated</h3>
       <h1 className='absolute top-[12.5rem] font-bold text-[0.8rem] text-white left-[69rem]'>Download App</h1>
+      <div className='flex top-[14.5rem] left-[68.3rem] absolute w-[5rem]'>
+          <img src="https://img.lazcdn.com/g/tps/imgextra/i2/O1CN01n3PMa828kJZVuCbPp_!!6000000007970-2-tps-72-72.png_150x150q80.png" alt="" className='h-[2.3rem] '/>
+          <h1 className='ml-[0.7rem] text-[0.9rem] font-bold text-white'>Free Delivery</h1>
+      </div>
+      <div className='flex top-[17.5rem] left-[68.3rem] absolute w-[5rem]'>
+          <img src="https://img.lazcdn.com/g/tps/imgextra/i3/O1CN01J03SMW1lebTE7xkaN_!!6000000004844-2-tps-72-72.png_150x150q80.png" alt="" className='h-[2.3rem] '/>
+          <h1 className='ml-[0.7rem] text-[0.9rem] font-bold text-white'>Limited Time</h1>
+      </div>
+      <div className='flex'>
+        <div>
+          <img src="https://img.drz.lazcdn.com/g/tps/imgextra/i2/O1CN01da6D0K1Khogk708ZP_!!6000000001196-0-tps-150-150.jpg_360x360q80.jpg" alt="" className='h-[6rem] mt-[0.5rem]' />
+        </div>
+        <div>
+          <NavLink to="#"><img src="https://img.lazcdn.com/g/tps/imgextra/i4/O1CN01uAl8kB1wEv2DNjdhB_!!6000000006277-2-tps-125-36.png" alt="" className='h-[1.5rem] mt-[1.5rem] ml-[0.5rem]'/></NavLink>
+          <NavLink to="#"><img src="https://img.lazcdn.com/g/tps/imgextra/i1/O1CN01QJGFfc1S0mKngu4rQ_!!6000000002185-2-tps-125-36.png" alt="" className='h-[1.5rem] mt-[0.8rem] ml-[0.5rem]' /></NavLink>
+        </div>
+      </div>
+      <h1 className='text-[10px] ml-[0.5rem] mt-[0.3rem]'>Download the App Now!</h1>
     </div>
     </div>
     
