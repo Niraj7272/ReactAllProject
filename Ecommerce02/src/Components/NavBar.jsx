@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from "../assets/logo.png"
 
+
 const NavBar = () => {
   return (
     <div className='shadow-md bg-white dark:bg-gray-900'>
@@ -23,7 +24,9 @@ const NavBar = () => {
                         duration-300 rounded-full border 
                         border-gray-300 px-2 py-1
                          focus:outline-none focus:border-1 
-                         focus:border-orange-600 bg-white' />
+                         focus:border-orange-600 bg-white relative'
+                          />
+                          <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className='h-[1.4rem] group-hover absolute top-[1.3rem] left-[78.4rem]' />
                     </div>
                 </div>
             </div>
