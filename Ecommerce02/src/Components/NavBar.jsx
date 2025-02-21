@@ -26,7 +26,9 @@ const NavBar = () => {
                          focus:outline-none focus:border-1 
                          focus:border-orange-600 bg-white relative'
                           />
-                          <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className='h-[1.4rem] group-hover absolute top-[1.3rem] left-[78.4rem]' />
+                          <div className=' absolute top-[0.9rem] left-[78rem] h-[2rem] bg-yellow-300 pt-[0.3rem] w-[3rem] pl-[1rem] rounded-2xl cursor-pointer border-[1px] border-gray-500'>
+                                <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className='h-[1.4rem] group-hover' />
+                          </div>
                     </div>
                 </div>
             </div>
