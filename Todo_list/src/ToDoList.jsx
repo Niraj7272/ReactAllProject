@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import AddList from "./AddList";
 
 const TODoList = ()=>{
+
+    const [pop,setPop] = useState(false);
+
+    const data = [
+        {
+            title:"hello",
+            description:"hello everyone how are you. i am fine and how aru"
+        },
+        {
+            title:"hello",
+            description:"hello everyone how are you. i am fine and how aru"
+        },
+       
+    ]
+
+
     return(
         <div className="bg-gray-200 h-screen">
             <h1>.</h1>
@@ -14,15 +31,30 @@ const TODoList = ()=>{
                 </div>
                 <div className="bg-green-600 mr-[10rem] w-[12rem] pl-[5rem] pt-[0.3rem] font-bold text-white cursor-pointer hover:bg-green-800">
                     <button onClick={()=>{
-                        setShow(true)
-                    }}>Add</button>
+                        setPop(true);
+                    }} className="cursor-pointer">Add</button>
                 </div>
             </div>
+            <div className="absolute top-[2rem]">
+                {pop? <AddList cross={setPop}/>:null}
+           
+            </div>
             <div className="h-[25rem] bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
-
+            <div className="bg-gray-100 ml-[1.5rem] grid grid-cols-2">
+            {data.map((item,i)=>{
+                return(
+                    <div className="">
+                    <h1 className="text-[2rem] font-bold ml-[5rem]">{item.title}</h1>
+                    <p>{item.description}</p>
+                    </div>
+                )
+            })}
+                
+            </div>
             </div>
             
         </div>
+       
     )
 }
 
