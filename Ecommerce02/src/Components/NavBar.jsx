@@ -26,12 +26,20 @@ const NavBar = () => {
                          focus:outline-none focus:border-1 
                          focus:border-orange-600 bg-white relative'
                           />
-                          <div className=' absolute top-[0.9rem] left-[78rem] h-[2rem] bg-yellow-300 pt-[0.3rem] w-[3rem] pl-[1rem] rounded-2xl cursor-pointer border-[1px] border-gray-500'>
+                          <div className=' absolute top-[0.9rem] left-[50rem] h-[2rem] bg-yellow-300 pt-[0.3rem] w-[3rem] pl-[1rem] rounded-2xl cursor-pointer border-[1px] border-gray-500'>
                                 <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="" className='h-[1.4rem] group-hover' />
                           </div>
                     </div>
                 </div>
+                {/* order button */}
+            <div className='flex'>
+                {/* <button onClick={()=> alert("Ordering not available yet")} className='bg-gradient-to-r from-orange-300 to-yellow-700 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group relative'>
+                    <span className='group-hover:block hidden transition-all duration-200'>Order</span>
+                </button> */}
+                <button onClick={()=>alert("Ordering not available yet")}><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/add-item-in-cart-3-624174.png" alt="" className='absolute h-[2rem] hover:bg-red-500' />Order</button>
             </div>
+            </div>
+           
         </div>
         {/* lower Navbar */}
         <div></div>
