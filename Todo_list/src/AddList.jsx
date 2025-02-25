@@ -13,14 +13,18 @@ const AddList = () => {
     setData({...data,[e.target.name]:e.target.value});
   }
 
-  const handleClick = (e) =>{
+  const handleClick = async(e) =>{
     e.preventDefault();
     try {
-      let result = axios({
-        url:"http://localhost:4444/add-items",
+      let result = await axios({
+        url:"http://localhost:4444/add-item",
         method:"post",
+        data:data,
       });
+      setPop(false)
       console.log(result);
+    
+
       alert("Data Inserted successfull!");
     } catch (error) {
       console.log(error);
