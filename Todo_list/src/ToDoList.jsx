@@ -59,12 +59,14 @@ const TODoList = () => {
             {data.map((item, i) => {
               return (
                 <div className="bg-gray-100 mt-[2rem] h-auto w-[25rem]">
-                  <h1 className="text-[2rem] font-bold ml-[10rem]">
+                  <h1 className="text-[2rem] font-bold flex justify-center">
                     {item.title}
                   </h1>
                   <p className="ml-[1.5rem]">{item.description}</p>
                   <div className="flex justify-between">
-                  <button className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
+                  <button className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]" onClick={()=>{
+                    navigate(`/readSpecific-item/${item._id}`)
+                  }}>
                     View
                   </button>
                   <button className="bg-green-500 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">

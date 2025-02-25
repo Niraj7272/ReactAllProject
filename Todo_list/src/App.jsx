@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import TODoList from './ToDoList'
 import AddList from './AddList'
+import View from './View'
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <div>
       <TODoList/>
      
-      
+      <View/>
     </div>
   )
 }
