@@ -17,4 +17,13 @@ export const readItem = (req,res) =>{
     })
 }
 
+export const readSpecificItem = (req,res)=>{
+    const id = req.params.id;
+    const q = `select * from items where id=?`;
+    db.query(q,[id],(err,result)=>{
+        if(err) return res.send(err);
+        return res.send(result)
+    })
+}
+
 
