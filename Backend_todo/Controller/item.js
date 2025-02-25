@@ -9,4 +9,12 @@ export const addItem = (req,res) =>{
     });
 };
 
+export const readItem = (req,res) =>{
+    const q = `select * from items`;
+    db.query(q,(err,result)=>{
+        if(err) return res.send(err);
+        return res.send(result)
+    })
+}
+
 
