@@ -1,19 +1,32 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import AddList from "./AddList";
+import axios from "axios";
 
 export const Mycontext = createContext();
 const TODoList = () => {
   const [pop, setPop] = useState(false);
-  const [data, setdata] = useState([
-    {
-      title: "hello",
-      description: "hello everyone how are you. i am fine and how aru",
-    },
-  ]);
+  const [data, setdata] = useState([]);
+
+  const GetData = async()=>{
+    try {
+      let result = await axios({
+        url: 'http://localhost:4444/read-item',
+        method: 'get',
+      });
+      // console.log(result.data);
+      setdata(result.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    GetData();
+  },[])
 
   return (
     <Mycontext.Provider value={{ data, setdata, setPop }}>
-      <div className="bg-gray-200 h-screen">
+      <div className="bg-gray-200 h-auto">
         <h1>.</h1>
         <div>
           <h1 className="bg-white m-[1rem] rounded-[20px] h-[5rem] text-[3rem] font-bold pl-[33rem]">
@@ -41,7 +54,7 @@ const TODoList = () => {
           </div>
         </div>
         <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div>
-        <div className="h-[25rem] bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
+        <div className="h-auto bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
           <div className=" ml-[1.5rem] grid grid-cols-3">
             {data.map((item, i) => {
               return (
@@ -50,9 +63,17 @@ const TODoList = () => {
                     {item.title}
                   </h1>
                   <p className="ml-[1.5rem]">{item.description}</p>
+                  <div className="flex justify-between">
                   <button className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
-                    Details
+                    View
                   </button>
+                  <button className="bg-green-500 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
+                    Edit
+                  </button>
+                  <button className="bg-red-700 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
+                    Delete
+                  </button>
+                  </div>
                 </div>
               );
             })}
