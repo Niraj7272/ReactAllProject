@@ -1,11 +1,14 @@
 import React, { createContext, useEffect, useState } from "react";
 import AddList from "./AddList";
 import axios from "axios";
+import View from "./View";
 
 export const Mycontext = createContext();
 const TODoList = () => {
   const [pop, setPop] = useState(false);
+  const [view,setView] = useState(false);
   const [data, setdata] = useState([]);
+  const [mid,setMid] = useState(null);
 
   const GetData = async()=>{
     try {
@@ -25,7 +28,7 @@ const TODoList = () => {
   },[])
 
   return (
-    <Mycontext.Provider value={{ data, setdata, setPop }}>
+    <Mycontext.Provider value={{ data, setdata, setPop , setView }}>
       <div className="bg-gray-200 h-auto">
         <h1>.</h1>
         <div>
@@ -54,6 +57,7 @@ const TODoList = () => {
           </div>
         </div>
         <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div>
+        <div className="absolute">{view ?<View/>: null}</div>
         <div className="h-auto bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
           <div className=" ml-[1.5rem] grid grid-cols-3">
             {data.map((item, i) => {
@@ -65,7 +69,8 @@ const TODoList = () => {
                   <p className="ml-[1.5rem]">{item.description}</p>
                   <div className="flex justify-between">
                   <button className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]" onClick={()=>{
-                    navigate(`/readSpecific-item/${item._id}`)
+                    
+                    setView(true)
                   }}>
                     View
                   </button>
