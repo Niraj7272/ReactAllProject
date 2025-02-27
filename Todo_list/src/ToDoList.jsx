@@ -31,8 +31,10 @@ const TODoList = () => {
         url: `http://localhost:4444/delete-item/${sendId}`,
         method: "delete",
       });
+      GetData();
+
       toast.success(result.data.message);
-      console.log(result);
+      // console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +45,7 @@ const TODoList = () => {
   }, []);
 
   return (
-    <Mycontext.Provider value={{ data, setdata, setPop, setView, sendId }}>
+    <Mycontext.Provider value={{ data, setdata, setPop, setView, sendId, pop }}>
       <div className="bg-gray-200 h-auto">
         <h1>.</h1>
         <div>
@@ -72,12 +74,12 @@ const TODoList = () => {
           </div>
         </div>
         {/* <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div> */}
-        <div className="absolute top-[2rem]">
-          {pop === "Add" && <AddList title="Add List" btn="Submit"/>}
+        {/* <div className="absolute top-[2rem]">
+          {pop === "Add" && <AddList title="Add List" btn="Submit" />}
         </div>
         <div className="absolute top-[2rem]">
-          {pop === "Update" && <AddList title="Update List" btn="Edit"/>}
-        </div>
+          {pop === "Update" && <AddList title="Update List" btn="Edit" />}
+        </div> */}
 
         <div className="absolute">{view ? <View /> : null}</div>
         <div className="h-auto bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
@@ -111,7 +113,6 @@ const TODoList = () => {
                       className="bg-red-700 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]"
                       onClick={() => {
                         Delete(item.id);
-                        GetData();
                       }}
                     >
                       Delete
@@ -121,6 +122,13 @@ const TODoList = () => {
               );
             })}
           </div>
+        </div>
+
+        <div className="absolute top-[2rem]">
+          {pop === "Add" && <AddList title="Add List" btn="Submit" />}
+        </div>
+        <div className="absolute top-[2rem]">
+          {pop === "Update" && <AddList title="Update List" btn="Edit" />}
         </div>
       </div>
     </Mycontext.Provider>

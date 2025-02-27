@@ -32,6 +32,8 @@ const AddList = ({ title, btn }) => {
     }
   };
 
+  console.log(pop);
+
   return (
     <div className="bg-blue-100 h-[25rem] w-[27rem] ml-[30rem] mt-[8rem]">
       <div className="flex justify-between">
@@ -48,7 +50,7 @@ const AddList = ({ title, btn }) => {
         </h1>
       </div>
       <div>
-      <input
+        {/* <input
             type="text"
             name="title"
             // value={data.title}
@@ -56,9 +58,10 @@ const AddList = ({ title, btn }) => {
             placeholder="Title"
             required
             className="border-[1px] m-[1rem] w-[23rem] h-[2rem] pl-[10rem] ml-[2rem]"
-          />
-        {/* {pop === "Update" ? "A" : "B"} */}
-        {/* {pop === "Add" ? (
+          /> */}
+      
+        
+        {pop === "Add" ? (
           <input
             type="text"
             name="title"
@@ -79,8 +82,7 @@ const AddList = ({ title, btn }) => {
             required
             className="border-[1px] m-[1rem] w-[23rem] h-[2rem] pl-[10rem] ml-[2rem]"
           />
-        )} */}
-
+        )}
         <br />
         <textarea
           name="description"
