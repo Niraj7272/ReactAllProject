@@ -2,33 +2,48 @@ import React, { createContext, useEffect, useState } from "react";
 import AddList from "./AddList";
 import axios from "axios";
 import View from "./View";
+import { toast } from "react-toastify";
 
 export const Mycontext = createContext();
 const TODoList = () => {
   const [pop, setPop] = useState(false);
-  const [view,setView] = useState(false);
+  const [view, setView] = useState(false);
   const [data, setdata] = useState([]);
-  const [mid,setMid] = useState(null);
+  const [sendId, setSendId] = useState(null);
 
-  const GetData = async()=>{
+  const GetData = async () => {
     try {
       let result = await axios({
-        url: 'http://localhost:4444/read-item',
-        method: 'get',
+        url: "http://localhost:4444/read-item",
+        method: "get",
       });
       // console.log(result.data);
-      setdata(result.data)
+      setdata(result.data);
+      // toast.success(result.data.message)
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  useEffect(()=>{
+  const Delete = async (sendId) => {
+    try {
+      let result = await axios({
+        url: `http://localhost:4444/delete-item/${sendId}`,
+        method: "delete",
+      });
+      toast.success(result.data.message);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
     GetData();
-  },[])
+  }, []);
 
   return (
-    <Mycontext.Provider value={{ data, setdata, setPop , setView }}>
+    <Mycontext.Provider value={{ data, setdata, setPop, setView, sendId }}>
       <div className="bg-gray-200 h-auto">
         <h1>.</h1>
         <div>
@@ -48,7 +63,7 @@ const TODoList = () => {
           <div className="bg-green-600 mr-[10rem] w-[12rem] pl-[5rem] pt-[0.3rem] font-bold text-white cursor-pointer hover:bg-green-800">
             <button
               onClick={() => {
-                setPop(true);
+                setPop("Add");
               }}
               className="cursor-pointer"
             >
@@ -56,8 +71,15 @@ const TODoList = () => {
             </button>
           </div>
         </div>
-        <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div>
-        <div className="absolute">{view ?<View/>: null}</div>
+        {/* <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div> */}
+        <div className="absolute top-[2rem]">
+          {pop === "Add" && <AddList title="Add List" btn="Submit"/>}
+        </div>
+        <div className="absolute top-[2rem]">
+          {pop === "Update" && <AddList title="Update List" btn="Edit"/>}
+        </div>
+
+        <div className="absolute">{view ? <View /> : null}</div>
         <div className="h-auto bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
           <div className=" ml-[1.5rem] grid grid-cols-3">
             {data.map((item, i) => {
@@ -68,18 +90,32 @@ const TODoList = () => {
                   </h1>
                   <p className="ml-[1.5rem]">{item.description}</p>
                   <div className="flex justify-between">
-                  <button className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]" onClick={()=>{
-                    
-                    setView(true)
-                  }}>
-                    View
-                  </button>
-                  <button className="bg-green-500 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
-                    Edit
-                  </button>
-                  <button className="bg-red-700 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]">
-                    Delete
-                  </button>
+                    <button
+                      className="bg-blue-400 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]"
+                      onClick={() => {
+                        setSendId(item.id);
+                        setView(true);
+                      }}
+                    >
+                      View
+                    </button>
+                    <button
+                      className="bg-green-500 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]"
+                      onClick={() => {
+                        setPop("Update");
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="bg-red-700 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]"
+                      onClick={() => {
+                        Delete(item.id);
+                        GetData();
+                      }}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               );
