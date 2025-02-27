@@ -34,3 +34,12 @@ export const deleteItem = (req,res) =>{
             return res.send({result,message:"Item deleted successfully"}); 
     })
 }
+
+export const updateItem = (req,res) =>{
+    const id = req.params.id;
+    const q = `Update from items WHERE id=?`;
+    db.query(q,[id],(err,result)=>{
+        if(err) return res.send(err)
+            return res.send({result,message:"Item Updated Successfully!"});
+    })
+}
