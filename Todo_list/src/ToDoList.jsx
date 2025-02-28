@@ -10,7 +10,10 @@ const TODoList = () => {
   const [view, setView] = useState(false);
   const [data, setdata] = useState([]);
   const [sendId, setSendId] = useState(null);
+ 
 
+
+  //read_item
   const GetData = async () => {
     try {
       let result = await axios({
@@ -25,10 +28,11 @@ const TODoList = () => {
     }
   };
 
-  const Delete = async (sendId) => {
+  //Delete-item
+  const Delete = async (id) => {
     try {
       let result = await axios({
-        url: `http://localhost:4444/delete-item/${sendId}`,
+        url: `http://localhost:4444/delete-item/${id}`,
         method: "delete",
       });
       GetData();
@@ -39,6 +43,7 @@ const TODoList = () => {
       console.log(error);
     }
   };
+
 
   useEffect(() => {
     GetData();
@@ -105,6 +110,7 @@ const TODoList = () => {
                       className="bg-green-500 h-[2rem] w-[6rem] font-bold text-white cursor-pointer mt-[7rem]"
                       onClick={() => {
                         setPop("Update");
+                        setSendId(item.id);
                       }}
                     >
                       Edit

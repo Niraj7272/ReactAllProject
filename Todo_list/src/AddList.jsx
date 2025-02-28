@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Mycontext } from "./ToDoList";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 const AddList = ({ title, btn }) => {
-  const { setPop, pop } = useContext(Mycontext);
+  const { setPop, pop, sendId } = useContext(Mycontext);
   const [data, setData] = useState({
     title: "",
     description: "",
@@ -32,7 +32,44 @@ const AddList = ({ title, btn }) => {
     }
   };
 
-  console.log(pop);
+  //update-item
+  const [editData, setEditData] = useState({
+    title: "",
+    description: "",
+  });
+
+  const submitHandle = (e) => {
+    setEditData({ ...editData, [e.target.name]: e.target.value });
+  };
+
+  const view = async () => {
+    try {
+      let result = await axios({
+        url: `http://localhost:4444/readspecific-item/${sendId}`,
+        method: "get",
+      });
+      // console.log(result);
+      setEditData(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    view();
+  }, []);
+
+  const Update = async () => {
+    try {
+      let result = await axios({
+        url: `http://localhost:4444/update-item/${sendId}`,
+        method: "patch",
+        data: editData,
+      });
+      setPop(false)
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="bg-blue-100 h-[25rem] w-[27rem] ml-[30rem] mt-[8rem]">
@@ -50,17 +87,7 @@ const AddList = ({ title, btn }) => {
         </h1>
       </div>
       <div>
-        {/* <input
-            type="text"
-            name="title"
-            // value={data.title}
-            onChange={handleChange}
-            placeholder="Title"
-            required
-            className="border-[1px] m-[1rem] w-[23rem] h-[2rem] pl-[10rem] ml-[2rem]"
-          /> */}
-      
-        
+
         {pop === "Add" ? (
           <input
             type="text"
@@ -75,31 +102,44 @@ const AddList = ({ title, btn }) => {
           <input
             type="text"
             name="title"
-            value="hello"
-            // onChange={handleChange}
-
+            value={editData.title}
+            onChange={submitHandle}
             placeholder="Title"
             required
             className="border-[1px] m-[1rem] w-[23rem] h-[2rem] pl-[10rem] ml-[2rem]"
           />
         )}
         <br />
-        <textarea
-          name="description"
-          id=""
-          cols="48"
-          rows="5"
-          value={data.description}
-          onChange={handleChange}
-          placeholder="Description"
-          required
-          className="border-[1px] ml-[2rem]"
-        ></textarea>
+        {pop === "Add" ? (
+          <textarea
+            name="description"
+            id=""
+            cols="48"
+            rows="5"
+            value={data.description}
+            onChange={handleChange}
+            placeholder="Description"
+            required
+            className="border-[1px] ml-[2rem]"
+          ></textarea>
+        ) : (
+          <textarea
+            name="description"
+            id=""
+            cols="48"
+            rows="5"
+            value={editData.description}
+            onChange={submitHandle}
+            placeholder="Description"
+            required
+            className="border-[1px] ml-[2rem]"
+          ></textarea>
+        )}
       </div>
       <div>
         <button
           className="bg-green-400 ml-[2rem] w-[23rem] mt-[2rem] text-[1.5rem] cursor-pointer"
-          onClick={handleClick}
+          onClick={pop === "Add" ? handleClick : Update}
         >
           {btn}
         </button>
