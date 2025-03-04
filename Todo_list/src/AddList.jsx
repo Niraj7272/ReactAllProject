@@ -72,6 +72,7 @@ const AddList = ({ title, btn }) => {
   };
 
   return (
+    <div className="fixed top-0 left-0 w-full h-[100vh] bg-transparent backdrop-blur-[3px]">
     <div className="bg-blue-100 h-[25rem] w-[27rem] ml-[30rem] mt-[8rem]">
       <div className="flex justify-between">
         <h1 className="font-bold text-[1.7rem] pl-[10rem] pt-[1.7rem]">
@@ -144,6 +145,7 @@ const AddList = ({ title, btn }) => {
           {btn}
         </button>
       </div>
+    </div>
     </div>
   );
 };

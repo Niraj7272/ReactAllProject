@@ -78,13 +78,6 @@ const TODoList = () => {
             </button>
           </div>
         </div>
-        {/* <div className="absolute top-[2rem]">{pop ? <AddList /> : null}</div> */}
-        {/* <div className="absolute top-[2rem]">
-          {pop === "Add" && <AddList title="Add List" btn="Submit" />}
-        </div>
-        <div className="absolute top-[2rem]">
-          {pop === "Update" && <AddList title="Update List" btn="Edit" />}
-        </div> */}
 
         <div className="absolute">{view ? <View /> : null}</div>
         <div className="h-auto bg-white mt-[2.5rem] ml-[1.5rem] mr-[1.5rem] rounded-2xl">
