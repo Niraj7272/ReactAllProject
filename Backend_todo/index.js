@@ -2,6 +2,7 @@ import express from 'express'
 import userRoute from './router/userRoute.js'
 import { configDotenv } from 'dotenv';
 import cors from 'cors'
+import fileRoute from './router/fileRoute.js'
 
 configDotenv();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/",userRoute);
+app.use("/",fileRoute);
 
 
 
