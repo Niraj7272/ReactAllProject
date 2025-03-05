@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Frontpage from './Frontpage'
 import AddProduct from './AddProduct'
+import Shop from './Shop'
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
 
   return (
     <div>
-        <AddProduct/>
+        {/* <AddProduct/> */}
+        <Shop/>
     </div>
   )
 }

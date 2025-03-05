@@ -23,6 +23,11 @@ try {
         data:data,
     })
     // console.log(result);
+    setData({
+        name:"",
+        price:"",
+        description:""
+    })
     toast.success(result.data.message);
 } catch (error) {
     console.log(error);
@@ -36,9 +41,9 @@ try {
                 <h1 className='text-blue-900 font-bold text-[1.5rem] flex justify-center pt-[2rem]'>ADD PRODUCT</h1>
             </div>
             <div className='ml-[3rem] pt-[2rem]'>
-                <input type="text" name='name' onChange={handleChange} placeholder='Enter Name' className='bg-white h-[2.3rem] w-[24rem] pl-[10rem] rounded-2xl border-[1px] border-gray-300'/><br />
-                <input type="number" name='price' onChange={handleChange} placeholder='Enter price' className='bg-white h-[2.3rem] w-[24rem] pl-[10rem] rounded-2xl mt-[1rem] border-[1px] border-gray-300'/><br />
-                <textarea name="description" onChange={handleChange} id="" placeholder='Enter Description' className='bg-white h-[4rem] w-[24rem] pl-[9rem] rounded-2xl mt-[1rem] border-[1px] border-gray-300'></textarea>
+                <input type="text" name='name' onChange={handleChange} value={data.name} placeholder='Enter Name' className='bg-white h-[2.3rem] w-[24rem] pl-[10rem] rounded-2xl border-[1px] border-gray-300'/><br />
+                <input type="number" name='price' onChange={handleChange} value={data.price} placeholder='Enter price' className='bg-white h-[2.3rem] w-[24rem] pl-[10rem] rounded-2xl mt-[1rem] border-[1px] border-gray-300'/><br />
+                <textarea name="description" onChange={handleChange} id="" value={data.description} placeholder='Enter Description' className='bg-white h-[4rem] w-[24rem] pl-[9rem] rounded-2xl mt-[1rem] border-[1px] border-gray-300'></textarea>
                 <input type="text" />
             </div>
             <div>
