@@ -3,6 +3,7 @@ import TODoList from './ToDoList'
 import AddList from './AddList'
 import Button from './Button'
 import Registration from './Registration'
+import Login from './Login'
 
 
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <div>
       {/* <TODoList/> */}
-      <Registration/>
+      {/* <Registration/> */}
+      <Login/>
     </div>
   )
 }
