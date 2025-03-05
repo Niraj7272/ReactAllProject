@@ -30,16 +30,18 @@ const Registration = () => {
     }
 
   return (
-    <div className='bg-blue-200 h-[25rem] w-[30rem] ml-[27rem] mt-[8rem] rounded-2xl'>
-        <h1 className='text-blue-900 text-[2rem] font-bold flex justify-center pt-[2rem]'>Sign Up</h1>
-        <div className='ml-[2.5rem]'>
-            <input type="text" value={user.name} placeholder='Enter Your Name' name='name' onChange={handleChange} className='bg-white w-[25rem] h-[2.5rem] mt-[2rem] pl-[8rem] rounded-2xl' /><br />
-            <input type="email" value={user.email} placeholder='Enter Your Email' name='email' onChange={handleChange} className='bg-white w-[25rem] h-[2.5rem] mt-[1rem] pl-[8rem] rounded-2xl'/><br />
-            <input type="password" value={user.password} placeholder='Enter Your Password' name='password' onChange={handleChange} className='bg-white w-[25rem] h-[2.5rem] mt-[1rem] pl-[8rem] rounded-2xl'/>
+    <div className='bg-gray-500 h-screen w-screen flex justify-center items-center'>
+    <div className='bg-white h-[30rem] w-[25rem] shadow-black shadow-2xl'>
+        <h1 className='text-black text-[2rem] font-bold flex justify-center mt-[2.5rem]'>Sign Up</h1>
+        <div className='ml-[3rem] mt-[2rem]'>
+            <input type="text" value={user.name} placeholder='Enter Your Name' name='name' onChange={handleChange} className='bg-white w-[19rem] h-[2.5rem] mt-[2rem] pl-[1rem] border-gray-500 border-[1px] rounded' /><br />
+            <input type="email" value={user.email} placeholder='Enter Your Email' name='email' onChange={handleChange} className='bg-white w-[19rem] h-[2.5rem] mt-[1rem] pl-[1rem]  border-gray-500 border-[1px] rounded'/><br />
+            <input type="password" value={user.password} placeholder='Enter Your Password' name='password' onChange={handleChange} className='bg-white w-[19rem] h-[2.5rem] mt-[1rem] pl-[1rem]  border-gray-500 border-[1px] rounded'/>
         </div>
         <div>
-            <button className='bg-green-700 w-[25rem] h-[2.5rem] mt-[2rem] pl-[1rem] font-bold rounded-2xl ml-[2.5rem]' onClick={handleClick}>Sign Up</button>
+            <button className='bg-blue-600 w-[19rem] h-[2.5rem] mt-[4rem] pl-[1rem] font-bold rounded ml-[3rem]' onClick={handleClick}>Sign Up</button>
         </div>
+    </div>
     </div>
   )
 }

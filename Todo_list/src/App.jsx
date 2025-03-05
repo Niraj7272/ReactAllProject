@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
       {/* <TODoList/> */}
-      {/* <Registration/> */}
-      <Login/>
+      <Registration/>
+      {/* <Login/> */}
     </div>
   )
 }
