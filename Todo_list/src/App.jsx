@@ -2,6 +2,7 @@ import { useState } from 'react'
 import TODoList from './ToDoList'
 import AddList from './AddList'
 import Button from './Button'
+import Registration from './Registration'
 
 
 
@@ -10,8 +11,8 @@ function App() {
 
   return (
     <div>
-      <TODoList/>
-      
+      {/* <TODoList/> */}
+      <Registration/>
     </div>
   )
 }
