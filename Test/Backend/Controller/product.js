@@ -8,3 +8,12 @@ export const addproduct = (req,res) =>{
             return res.send({result,message:"Product Added Successfully"})
     })
 }
+
+export const readProduct = (req,res) =>{
+    const q = `Select * From product_detail`;
+    db.query(q,(err,result)=>{
+        if(err) return res.send(err)
+            return res.send(result);
+    })
+}
+
