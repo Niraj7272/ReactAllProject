@@ -49,11 +49,11 @@ const Shop = () => {
           {fetchData.map((item, i) => {
             return (
               <div className="bg-gray-300 h-[20rem] w-[15rem] ml-[1rem] mt-[1rem] hover:shadow-blue-400 shadow-2xl">
-                {/* <img
+                <img
                   src="./public/50-ultra-sensual-eau-de-parfum-wild-stone-men-original-imafrbzu8xgyfhkg.webp"
                   alt=""
                   className="h-[15rem]"
-                /> */}
+                />
                 <h1 className="ml-[2rem] mt-[0.5rem] font-bold text-[1.4rem]">
                   {item.name}
                 </h1>

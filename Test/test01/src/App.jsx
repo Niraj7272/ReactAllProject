@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Frontpage from './Frontpage'
 import AddProduct from './AddProduct'
 import Shop from './Shop'
+import Detail from './Detail'
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   return (
     <div>
         {/* <AddProduct/> */}
-        <Shop/>
+        {/* <Shop/> */}
+        <Detail/>
     </div>
   )
 }
