@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
         {/* <AddProduct/> */}
-        {/* <Shop/> */}
-        <Detail/>
+        <Shop/>
+        {/* <Detail/> */}
     </div>
   )
 }

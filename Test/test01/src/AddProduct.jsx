@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react'
 import { toast } from 'react-toastify';
-import { MyContext } from './Shop';
+import { Mycontext } from './Shop';
 
 const AddProduct = () => {
-const {setViewPop} = useContext(MyContext);
-
+const {setViewPop} = useContext(Mycontext);
 const [data,setData] = useState({
     name:"",
     price:"",
@@ -41,9 +40,11 @@ try {
         <form action="">
             <div className='flex justify-between'>
                 <h1 className='text-blue-900 font-bold text-[1.5rem]  ml-[10rem] pt-[2rem]'>ADD PRODUCT</h1>
-                <p className='text-[1.3rem] font-bold text-red-600 mr-[0.5rem] cursor-pointer hover:text-red-900' onClick={()=>{
-                    setViewPop(false)
-                }}>X</p>
+                <p className='text-[1.3rem] font-bold text-red-600 mr-[0.5rem] cursor-pointer hover:text-red-900'
+                  onClick={() => {
+                    setViewPop(false);
+                  }}
+              >X</p>
             </div>
             <div className='ml-[3rem] pt-[2rem]'>
                 <input type="text" name='name' onChange={handleChange} value={data.name} placeholder='Enter Name' className='bg-white h-[2.3rem] w-[24rem] pl-[10rem] rounded-2xl border-[1px] border-gray-300'/><br />
