@@ -22,7 +22,6 @@ const TODoList = () => {
       });
       // console.log(result.data);
       setdata(result.data);
-      // toast.success(result.data.message)
     } catch (error) {
       console.log(error);
     }
