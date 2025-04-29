@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Login from './Pages/Login'
+import SignUp from './Pages/SignUp'
 
 const MyRoute = () => {
 
@@ -38,6 +39,10 @@ const MyRoute = () => {
                     {
                         path:"/login",
                         element:<Login/>
+                    },
+                    {
+                        path:"/signUp",
+                        element:<SignUp/>
                     }
                 ]
             }
