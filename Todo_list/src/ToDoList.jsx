@@ -3,6 +3,7 @@ import AddList from "./AddList";
 import axios from "axios";
 import View from "./View";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 export const Mycontext = createContext();
 const TODoList = () => {
@@ -52,10 +53,11 @@ const TODoList = () => {
     <Mycontext.Provider value={{ data, setdata, setPop, setView, sendId, pop }}>
       <div className="bg-gray-200 h-auto">
         <h1>.</h1>
-        <div>
-          <h1 className="bg-white m-[1rem] rounded-[20px] h-[5rem] text-[3rem] font-bold pl-[33rem]">
+        <div className="flex bg-white m-[1rem] rounded-[20px] h-[5rem]  font-bold pl-[33rem]">
+          <h1 className="text-[3rem]">
             Todo List
           </h1>
+          <button className="bg-blue-700 h-[2rem] text-white w-[8rem] ml-[27rem] mt-[1.5rem] rounded-2xl cursor-pointer hover:bg-blue-400">Login</button>
         </div>
         <div className="flex justify-between">
           <div className="bg-white flex justify-between w-[30rem] ml-[1.5rem] border-[1px]">
