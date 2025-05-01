@@ -7,6 +7,7 @@ import Contact from './Pages/Contact'
 import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
 import Dashboard from './Admin/Dashboard'
+import AddProduct from './Admin/AddProduct'
 
 const MyRoute = () => {
 
@@ -16,6 +17,7 @@ const MyRoute = () => {
                 <Navbar/>
                 <Outlet/>
                 <Dashboard/>
+                <AddProduct/>
             </div>
         )
     }
