@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Mycontext } from './product';
+
+const category = ['','Clothing','Fooding','Electronic','Footware'];
 
 const AddProduct = () => {
+
+    const { pop, setPop } = useContext(Mycontext);
+
   return (
-    <div className='bg-gray-300 h-screen w-screen'>
-        <div className='bg-white h-[35rem] w-[50rem] mt-[5rem] ml-[17rem]'>
-                <h1 className='text-orange-600 font-bold text-[2rem] ml-[18rem] pt-[1rem]'>Add Product</h1>
+        <div className='bg-white h-[35rem] w-[50rem] mt-[5rem]  ml-[7rem]'>
+                <h1 onClick={() => {
+            setPop(false);
+          }} className='bg-gray-400 text-red-600 font-bold w-[30px] h-[30px] text-[1.2rem] pl-[6px] ml-[48rem] cursor-pointer'>X</h1>
+                <h1 className='text-orange-600 font-bold text-[2rem] ml-[18rem]'>Add Product</h1>
             <div className='ml-[3rem] mt-[2rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Product Title</label><br />
@@ -22,7 +30,11 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Category</label><br />
-                    <input type="text" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <select name="" id="" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
+                        {category.map((cat)=> (
+                             <option value="cat">{cat}</option>
+                        ))}
+                    </select>
                 </div>
             </div>
             <div className='ml-[3rem] mt-[1rem] flex gap-[2rem]'>
@@ -32,7 +44,7 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Choose Image</label><br />
-                    <input type="text" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="file" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
                 </div>
             </div>
             <div>
@@ -40,7 +52,6 @@ const AddProduct = () => {
             </div>
 
         </div>
-    </div>
   )
 }
 

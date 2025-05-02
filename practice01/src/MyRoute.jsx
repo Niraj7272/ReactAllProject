@@ -8,6 +8,7 @@ import Login from './Pages/Login'
 import SignUp from './Pages/SignUp'
 import Dashboard from './Admin/Dashboard'
 import AddProduct from './Admin/AddProduct'
+import Product from './Admin/product'
 
 const MyRoute = () => {
 
@@ -47,8 +48,17 @@ const MyRoute = () => {
                     {
                         path:"/signUp",
                         element:<SignUp/>
-                    }
+                    },
+                    
                 ]
+            },
+            {
+                path:"/dashboard",
+                element:<Dashboard/>
+            },
+            {
+                path:"/product",
+                element:<Product/>
             }
         ]
     )
