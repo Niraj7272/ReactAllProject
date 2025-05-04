@@ -5,12 +5,11 @@ const category = ['','Clothing','Fooding','Electronic','Footware'];
 
 const AddProduct = () => {
 
-    const { pop, setPop } = useContext(Mycontext);
+    // const {pop, setPop } = useContext(Mycontext);
 
   return (
         <div className='bg-white h-[35rem] w-[50rem] mt-[5rem]  ml-[7rem]'>
-                <h1 onClick={() => {
-            setPop(false);
+                <h1 onClick={() => { setPop(false);
           }} className='bg-gray-400 text-red-600 font-bold w-[30px] h-[30px] text-[1.2rem] pl-[6px] ml-[48rem] cursor-pointer'>X</h1>
                 <h1 className='text-orange-600 font-bold text-[2rem] ml-[18rem]'>Add Product</h1>
             <div className='ml-[3rem] mt-[2rem] flex gap-[2rem]'>

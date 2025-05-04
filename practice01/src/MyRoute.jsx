@@ -9,6 +9,7 @@ import SignUp from './Pages/SignUp'
 import Dashboard from './Admin/Dashboard'
 import AddProduct from './Admin/AddProduct'
 import Product from './Admin/product'
+import AddCategory from './Admin/AddCategory'
 
 const MyRoute = () => {
 
@@ -19,6 +20,7 @@ const MyRoute = () => {
                 <Outlet/>
                 <Dashboard/>
                 <AddProduct/>
+                <AddCategory/>
             </div>
         )
     }
