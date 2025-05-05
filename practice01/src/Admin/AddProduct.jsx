@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Mycontext } from './product';
+import { MyContext } from '../Context/contextCreateandProvide';
 
 const category = ['','Clothing','Fooding','Electronic','Footware'];
 
 const AddProduct = () => {
 
-    // const {pop, setPop } = useContext(Mycontext);
+    const {pop, setPop } = useContext(MyContext);
 
   return (
         <div className='bg-white h-[35rem] w-[50rem] mt-[5rem]  ml-[7rem]'>

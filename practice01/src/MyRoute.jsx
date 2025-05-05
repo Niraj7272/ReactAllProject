@@ -10,6 +10,7 @@ import Dashboard from './Admin/Dashboard'
 import AddProduct from './Admin/AddProduct'
 import Product from './Admin/product'
 import AddCategory from './Admin/AddCategory'
+import Category from './Admin/Category'
 
 const MyRoute = () => {
 
@@ -19,8 +20,6 @@ const MyRoute = () => {
                 <Navbar/>
                 <Outlet/>
                 <Dashboard/>
-                <AddProduct/>
-                <AddCategory/>
             </div>
         )
     }
@@ -61,6 +60,10 @@ const MyRoute = () => {
             {
                 path:"/product",
                 element:<Product/>
+            },
+            {
+                path: "/category",
+                element:<Category/>
             }
         ]
     )

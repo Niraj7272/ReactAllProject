@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import AddProduct from './AddProduct';
 import { MyContext } from '../Context/contextCreateandProvide';
+import AddCategory from './AddCategory';
 
-const Product= () => {
+const Category= () => {
 
     const {pop, setPop} = useContext(MyContext);
 
@@ -18,10 +18,10 @@ const Product= () => {
                 <h1 className='font-bold text-[1.1rem]'>Menu</h1>
                 <div className='mt-[1.3rem]'>
                     <h1><NavLink to="/dashboard">Dashboard</NavLink></h1>
-                    <h1 className='mt-[1.5rem]'><NavLink to="/product" className='bg-gray-600 p-[0.5rem]'>Product</NavLink></h1>
+                    <h1 className='mt-[1.5rem]'><NavLink to="/product">Product</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/costomer">Costomer</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/order">Order</NavLink></h1>
-                    <h1 className='mt-[1.5rem]'><NavLink to="/category">Category</NavLink></h1>
+                    <h1 className='mt-[1.5rem]'><NavLink to="/category" className='bg-gray-600 p-[0.5rem]'>Category</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/message">Message</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/transaction">Transaction</NavLink></h1>
                 </div>
@@ -30,7 +30,7 @@ const Product= () => {
 
         <div>
         <div className='flex relative'>
-        <div className='absolute'>{pop ? <AddProduct/> : null}</div>
+        <div className='absolute'>{pop ? <AddCategory/> : null}</div>
             <div>
                 <input type="text" placeholder='Search' className=' bg-gray-200 mt-[3rem] h-[3rem] w-[45rem] rounded-2xl ml-[2rem] pl-[2rem] font-semibold' />
             </div>
@@ -55,4 +55,4 @@ const Product= () => {
   )
 }
 
-export default Product
+export default Category

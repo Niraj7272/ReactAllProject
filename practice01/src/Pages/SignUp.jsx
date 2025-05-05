@@ -1,16 +1,49 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const SignUp = () => {
+
+  const [user , setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  })
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value})
+  }
+
+  const handleClick = async(e) => {
+    e.preventDefault();
+    if (user.password !== user.cpassword){
+      return toast.success("Password and Conform password must be same")
+    }
+    try {
+      let result = await axios.post(`http://localhost:2222/add_user`,user);
+      toast.success(result.data.message);
+      setUser({
+        name: "",
+        email: "",
+        password: "",
+        cpassword: "",
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className='bg-gray-300 h-[33rem] w-[30rem] ml-[27rem] m-[1rem] rounded-2xl shadow-2xl'>
       <h1 className='font-bold text-[2rem] text-gray-700 ml-[12rem]  pt-[0.5rem]'>Sign Up</h1>
       <div className='mt-[1.5rem]'>
-        <input type="text" placeholder='Name' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
-        <input type="email" placeholder='Email' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
-        <input type="password" placeholder='Password' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
-        <input type="password" placeholder='Conform Password' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
-        <button className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem] font-bold bg-blue-500 text-white'>Sign Up</button><br />
+        <input type="text" name='name' onChange={handleChange} value={user.name} placeholder='Name' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
+        <input type="email" name='email' onChange={handleChange} value={user.email} placeholder='Email' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
+        <input type="password" name='password' onChange={handleChange} value={user.password} placeholder='Password' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
+        <input type="password" name='cpassword' onChange={handleChange} value={user.cpassword} placeholder='Conform Password' className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem]'/><br /><br />
+        <button onClick={handleClick} className='border-1 border-gray-500 h-[2.3rem] w-[25rem] ml-[2.5rem] rounded-2xl pl-[2rem] font-bold bg-blue-500 text-white'>Sign Up</button><br />
         <div className='flex ml-[2.5rem] mt-[1rem]'>
           <p className='text-gray-600'>Already have an account?</p><NavLink to="/login" className='text-blue-500'>Login</NavLink>
         </div>
