@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 export const insertUser = (req, res) => {
   const { name, email, password } = req.body;
-//   console.log(req.body);
+  console.log(req.body);
   
 
   const salt = bcrypt.genSaltSync(10);
