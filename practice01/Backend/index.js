@@ -2,6 +2,7 @@ import express from 'express'
 import { configDotenv } from 'dotenv';
 import cors from 'cors'
 import categoryRoute from './router/categoryRoute.js'
+import userRoute from './router/userRoute.js'
 
 configDotenv();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/",categoryRoute);
+app.use("/", userRoute);
 
 app.listen(port,()=>{
     console.log(`Server is started at port: ${port}`);
