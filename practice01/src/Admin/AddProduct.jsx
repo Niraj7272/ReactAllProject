@@ -8,6 +8,7 @@ const AddProduct = () => {
     const {pop, setPop } = useContext(MyContext);
 
   return (
+    <div className='bg-transparent backdrop-blur-sm h-screen w-screen fixed'>
         <div className='bg-white h-[35rem] w-[50rem] mt-[5rem]  ml-[7rem]'>
                 <h1 onClick={() => { setPop(false);
           }} className='bg-gray-400 text-red-600 font-bold w-[30px] h-[30px] text-[1.2rem] pl-[6px] ml-[48rem] cursor-pointer'>X</h1>
@@ -51,6 +52,7 @@ const AddProduct = () => {
             </div>
 
         </div>
+    </div>
   )
 }
 

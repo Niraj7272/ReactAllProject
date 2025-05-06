@@ -1,11 +1,31 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { MyContext } from '../Context/contextCreateandProvide';
 import AddCategory from './AddCategory';
+import axios from 'axios';
 
 const Category= () => {
 
     const {pop, setPop} = useContext(MyContext);
+    const [data,setData] = useState([]);
+
+    //read category
+    const GetCategory = async () => {
+        try {
+            let result = await axios({
+                url: "http://localhost:2222/read_category",
+                method: "get",
+            });
+            console.log(result.data);
+            setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        GetCategory();
+    },[]);
 
   return (
     <div className='bg-white h-screen w-screen flex'>
@@ -47,8 +67,29 @@ const Category= () => {
             </div>
         </div>
         
-        <div className='bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem]'>
-            <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] w-[7rem] pl-[2rem] font-bold text-white cursor-pointer ml-[63rem]'>Add</button>
+        <div className='bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem] '>
+            <div className='flex'>
+                <h1 className='font-bold text-[1.5rem] ml-[2rem] bg-white h-[2.5rem] w-[50rem] pl-[20rem] mt-[1rem] rounded-2xl text-blue-800 opacity-70'>Category List</h1>
+                <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] w-[7rem] pl-[1rem] font-bold text-white cursor-pointer mt-[1rem] ml-[10rem]'>Add</button>
+            </div>
+            <div className='bg-white mt-[2rem] h-auto w-[66rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
+                <table>
+                    <thead className='text-gray-500'>
+                        <th>SN</th>
+                        <th  className='pl-[10rem]'>Category</th>
+                        <th  className='pl-[15rem]'>Action</th>
+                    </thead>
+                    {data.map((item,i) => {
+                return(
+                    <tbody className=''>
+                        <td className='pt-[1.5rem] pl-[0.5rem]'>{1+i}</td>
+                        <td  className='pt-[1.5rem] pl-[8rem]'>{item.category_title}</td>
+                        <td  className='pt-[1.5rem] pl-[10rem]'>Delete</td>
+                    </tbody>
+                );
+            })}
+            </table>
+            </div>
         </div>
         </div>
     </div>
