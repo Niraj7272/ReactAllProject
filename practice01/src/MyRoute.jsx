@@ -19,7 +19,6 @@ const MyRoute = () => {
             <div>
                 <Navbar/>
                 <Outlet/>
-                <Dashboard/>
             </div>
         )
     }
@@ -41,17 +40,16 @@ const MyRoute = () => {
                     {
                         path:"/contact",
                         element:<Contact/>
-                    },
-                    {
-                        path:"/login",
-                        element:<Login/>
-                    },
-                    {
-                        path:"/signUp",
-                        element:<SignUp/>
-                    },
-                    
+                    }
                 ]
+            },
+            {
+                path:"/login",
+                element:<Login/>
+            },
+            {
+                path:"/signUp",
+                element:<SignUp/>
             },
             {
                 path:"/dashboard",

@@ -32,6 +32,7 @@ const AddCategory = () => {
     }
 
   return (
+    <div className='h-screen w-screen fixed bg-transparent backdrop-blur-sm'>
         <div className='bg-white h-[22rem] w-[40rem] mt-[10rem]  ml-[12rem]'>
                 <h1 onClick={() => { setPop(false);
           }} className='bg-gray-400 text-red-600 font-bold w-[30px] h-[30px] text-[1.2rem] pl-[6px] ml-[38rem] cursor-pointer'>X</h1>
@@ -46,6 +47,7 @@ const AddCategory = () => {
                 <button onClick={handleClick} className=' h-[4rem] w-[15rem] rounded-[5px] mt-[4rem] ml-[22rem] bg-green-500 cursor-pointer font-bold text-white text-2xl'>Add</button>
             </div>
 
+        </div>
         </div>
   )
 }
