@@ -23,6 +23,7 @@ const Dashboard = () => {
             </div>
         </div>
 
+        <div className=''>
         <div className='flex'>
             <div>
                 <input type="text" placeholder='Search' className=' bg-gray-200 mt-[3rem] h-[3rem] w-[45rem] rounded-2xl ml-[2rem] pl-[2rem] font-semibold' />
@@ -38,6 +39,28 @@ const Dashboard = () => {
                     <h1 className=' bg-gray-200 mt-[3rem] h-[3rem] w-[10rem] rounded-2xl ml-[2rem] pl-[3rem] pt-[0.7rem] font-bold text-gray-600'>Log Out</h1>
                 </NavLink>
             </div>
+        </div>
+        <div className='bg-gray-200 h-[25rem] w-[67rem] ml-[2rem] mt-[3rem] fixed'>
+            <div className='bg-white h-[2.5rem] mt-[1rem] w-[63rem] ml-[2rem] rounded-2xl'>
+                <h1 className='text-blue-900 opacity-70 font-bold text-[1.5rem] pl-[30rem] '>User List</h1>
+            </div>
+            <div className='bg-white mt-[2rem] h-auto w-[63rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
+                <table>
+                    <thead className='text-gray-500'>
+                        <th>SN</th>
+                        <th className='pl-[10rem]'>Name</th>
+                        <th className='pl-[10rem]'>Email</th>
+                        <th className='pl-[10rem]'>Action</th>
+                    </thead>
+                    <tbody>
+                        <td className='pt-[1.5rem] pl-[0.5rem]'>1</td>
+                        <td className='pt-[1.5rem] pl-[7rem]'>Niraj Chaudhary</td>
+                        <td className='pt-[1.5rem] pl-[10rem]'>niraj@gmail.com</td>
+                        <td className='pt-[1.5rem] pl-[10rem]'>Delete|Update</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </div>
     </div>
   )
