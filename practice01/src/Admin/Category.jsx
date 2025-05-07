@@ -75,16 +75,20 @@ const Category= () => {
             <div className='bg-white mt-[2rem] h-auto w-[66rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
                 <table>
                     <thead className='text-gray-500'>
+                        <tr>
                         <th>SN</th>
                         <th  className='pl-[10rem]'>Category</th>
                         <th  className='pl-[15rem]'>Action</th>
+                        </tr>
                     </thead>
                     {data.map((item,i) => {
                 return(
                     <tbody className=''>
+                        <tr>
                         <td className='pt-[1.5rem] pl-[0.5rem]'>{1+i}</td>
                         <td  className='pt-[1.5rem] pl-[8rem]'>{item.category_title}</td>
                         <td  className='pt-[1.5rem] pl-[10rem]'>Delete</td>
+                        </tr>
                     </tbody>
                 );
             })}

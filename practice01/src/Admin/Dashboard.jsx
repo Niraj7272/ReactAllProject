@@ -1,7 +1,29 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { data, NavLink } from 'react-router-dom'
 
 const Dashboard = () => {
+
+    const [data, setData] = useState([]);
+
+    // read User
+    const GetUser = async() => {
+        try {
+            let result = await axios({
+                url:"http://localhost:2222/read_user",
+                method:"get",
+            });
+            console.log(result.data);
+            setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(()=>{
+        GetUser();
+    },[])
+
   return (
     <div className='bg-white h-screen w-screen flex'>
         <div className='bg-blue-900 opacity-70 h-screen w-[10rem] '>
@@ -47,17 +69,25 @@ const Dashboard = () => {
             <div className='bg-white mt-[2rem] h-auto w-[63rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
                 <table>
                     <thead className='text-gray-500'>
+                        <tr>
                         <th>SN</th>
                         <th className='pl-[10rem]'>Name</th>
                         <th className='pl-[10rem]'>Email</th>
                         <th className='pl-[10rem]'>Action</th>
+                        </tr>
                     </thead>
+                    {data.map((item,i)=>{
+                        return(
                     <tbody>
-                        <td className='pt-[1.5rem] pl-[0.5rem]'>1</td>
-                        <td className='pt-[1.5rem] pl-[7rem]'>Niraj Chaudhary</td>
-                        <td className='pt-[1.5rem] pl-[10rem]'>niraj@gmail.com</td>
+                        <tr>
+                        <td className='pt-[1.5rem] pl-[0.5rem]'>{i}</td>
+                        <td className='pt-[1.5rem] pl-[7rem]'>{item.name}</td>
+                        <td className='pt-[1.5rem] pl-[10rem]'>{item.email}</td>
                         <td className='pt-[1.5rem] pl-[10rem]'>Delete|Update</td>
+                        </tr>
                     </tbody>
+                    );
+                })}
                 </table>
             </div>
         </div>
