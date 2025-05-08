@@ -62,7 +62,7 @@ const Dashboard = () => {
                 </NavLink>
             </div>
         </div>
-        <div className='bg-gray-200 h-[25rem] w-[67rem] ml-[2rem] mt-[3rem] fixed'>
+        <div className='bg-gray-200 h-[26rem] w-[67rem] ml-[2rem] mt-[3rem] pt-[1rem]'>
             <div className='bg-white h-[2.5rem] mt-[1rem] w-[63rem] ml-[2rem] rounded-2xl'>
                 <h1 className='text-blue-900 opacity-70 font-bold text-[1.5rem] pl-[30rem] '>User List</h1>
             </div>
@@ -80,7 +80,7 @@ const Dashboard = () => {
                         return(
                     <tbody>
                         <tr>
-                        <td className='pt-[1.5rem] pl-[0.5rem]'>{i}</td>
+                        <td className='pt-[1.5rem] pl-[0.5rem]'>{i+1}</td>
                         <td className='pt-[1.5rem] pl-[7rem]'>{item.name}</td>
                         <td className='pt-[1.5rem] pl-[10rem]'>{item.email}</td>
                         <td className='pt-[1.5rem] pl-[10rem]'>Delete|Update</td>

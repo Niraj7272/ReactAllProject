@@ -48,6 +48,7 @@ const Product= () => {
         </div>
         
         <div className='bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem]'>
+            <h1>Product List</h1>
             <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] w-[7rem] pl-[2rem] font-bold text-white cursor-pointer ml-[63rem]'>Add</button>
         </div>
         </div>

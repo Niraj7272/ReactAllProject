@@ -69,7 +69,7 @@ const Category= () => {
         
         <div className='bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem] '>
             <div className='flex'>
-                <h1 className='font-bold text-[1.5rem] ml-[2rem] bg-white h-[2.5rem] w-[50rem] pl-[20rem] mt-[1rem] rounded-2xl text-blue-800 opacity-70'>Category List</h1>
+                <h1 className='font-bold text-[1.5rem] ml-[2rem] bg-white h-[2.5rem] w-[50rem] pl-[20rem] mt-[1rem] rounded-2xl text-blue-800'>Category List</h1>
                 <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] w-[7rem] pl-[1rem] font-bold text-white cursor-pointer mt-[1rem] ml-[10rem]'>Add</button>
             </div>
             <div className='bg-white mt-[2rem] h-auto w-[66rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
