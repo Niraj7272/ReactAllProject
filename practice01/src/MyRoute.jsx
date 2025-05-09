@@ -11,6 +11,7 @@ import AddProduct from './Admin/AddProduct'
 import Product from './Admin/product'
 import AddCategory from './Admin/AddCategory'
 import Category from './Admin/Category'
+import Footer from './Pages/Footer'
 
 const MyRoute = () => {
 
@@ -19,6 +20,7 @@ const MyRoute = () => {
             <div>
                 <Navbar/>
                 <Outlet/>
+                <Footer/>
             </div>
         )
     }
