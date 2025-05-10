@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -14,9 +15,25 @@ const Footer = () => {
         </div>
         <div>
           <h1 className='font-bold text-white '>CATEGORIES</h1>
+          <div className='text-[1rem]  text-gray-800'>
+          <li><NavLink>Clothing</NavLink></li>
+          <li><NavLink>Footware</NavLink></li>
+          <li><NavLink>Handbag</NavLink></li>
+          <li><NavLink>Jwellery</NavLink></li>
+          <li><NavLink>Belt</NavLink></li>
+          <li><NavLink>Jense</NavLink></li>
+          </div>
         </div>
         <div>
           <h1 className='font-bold text-white '>INFORMATIONS</h1>
+          <div className='text-[1rem]  text-gray-800'>
+          <li><NavLink>About Us</NavLink></li>
+          <li><NavLink>Contact Us</NavLink></li>
+          <li><NavLink>Terms & Condition</NavLink></li>
+          <li><NavLink>Return & Exchange</NavLink></li>
+          <li><NavLink>Shipping & Delivery</NavLink></li>
+          <li><NavLink>Private Policy</NavLink></li>
+          </div>
         </div>
         <div>
           <h1 className='font-bold text-white '>CONTACT</h1>
