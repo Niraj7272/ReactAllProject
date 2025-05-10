@@ -37,6 +37,12 @@ const Footer = () => {
         </div>
         <div>
           <h1 className='font-bold text-white '>CONTACT</h1>
+          <div className='text-[1rem]  text-gray-800'>
+            <h1>Address: Duhabi-9, Sunsari Nepal</h1><br />
+            <hr />
+            <h1>Phone : 9814372723</h1>
+            <h1>Email : nc72723@gmail.com</h1>
+          </div>
         </div>
       </div>
     </div>
