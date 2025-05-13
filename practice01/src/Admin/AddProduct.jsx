@@ -1,11 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../Context/contextCreateandProvide';
+import axios from 'axios';
 
-const category = ['','Clothing','Fooding','Electronic','Footware'];
+// const category = ['','Clothing','Fooding','Electronic','Footware'];
 
 const AddProduct = () => {
-
+    const [data, setData] = useState([]);
     const {pop, setPop } = useContext(MyContext);
+
+    const GetProduct = async() => {
+        try {
+            let result = await axios({
+                url: "http://localhost:2222/read_category",
+                method: "get",
+            })
+            console.log(result.data);
+            setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>{
+        GetProduct();
+    },[]);
 
   return (
     <div className='bg-transparent backdrop-blur-sm h-screen w-screen fixed'>
@@ -31,8 +49,8 @@ const AddProduct = () => {
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Category</label><br />
                     <select name="" id="" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
-                        {category.map((cat)=> (
-                             <option value="cat">{cat}</option>
+                        {data.map((cat,i)=> (
+                             <option value="cat">{cat.category_title}</option>
                         ))}
                     </select>
                 </div>
