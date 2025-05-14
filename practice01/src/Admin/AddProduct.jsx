@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../Context/contextCreateandProvide';
 import axios from 'axios';
 
-// const category = ['','Clothing','Fooding','Electronic','Footware'];
-
 const AddProduct = () => {
     const [data, setData] = useState([]);
     const {pop, setPop } = useContext(MyContext);
+
+    const handleChange = (e) => {
+        console.log(e.target.files[0]);
+    }
 
     const GetProduct = async() => {
         try {
@@ -34,21 +36,21 @@ const AddProduct = () => {
             <div className='ml-[3rem] mt-[2rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Product Title</label><br />
-                    <input type="text" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Price</label><br />
-                    <input type="text" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
             </div>
             <div className='ml-[3rem] mt-[1rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Stock</label><br />
-                    <input type="text" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Category</label><br />
-                    <select name="" id="" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
+                    <select name="" id="" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
                         {data.map((cat,i)=> (
                              <option value="cat">{cat.category_title}</option>
                         ))}
@@ -62,7 +64,7 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Choose Image</label><br />
-                    <input type="file" className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
+                    <input type="file" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
                 </div>
             </div>
             <div>
