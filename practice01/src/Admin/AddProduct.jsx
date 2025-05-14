@@ -4,10 +4,22 @@ import axios from 'axios';
 
 const AddProduct = () => {
     const [data, setData] = useState([]);
+    const [value, setvalue] = useState({
+        productTitle: "",
+        price: "",
+        stock: "",
+        category: "",
+        description: "",
+        image: "",
+    });
     const {pop, setPop } = useContext(MyContext);
 
     const handleChange = (e) => {
-        console.log(e.target.files[0]);
+        console.log({...data, [e.target.name]: e.target.value});
+    }
+
+    const handleClick = () => {
+
     }
 
     const GetProduct = async() => {
@@ -36,21 +48,21 @@ const AddProduct = () => {
             <div className='ml-[3rem] mt-[2rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Product Title</label><br />
-                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} name='productTitle' className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Price</label><br />
-                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} name='price' className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
             </div>
             <div className='ml-[3rem] mt-[1rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Stock</label><br />
-                    <input type="text" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} name='stock' className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Category</label><br />
-                    <select name="" id="" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
+                    <select name="category" id="" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'>
                         {data.map((cat,i)=> (
                              <option value="cat">{cat.category_title}</option>
                         ))}
@@ -60,15 +72,15 @@ const AddProduct = () => {
             <div className='ml-[3rem] mt-[1rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Description</label><br />
-                    <textarea name="" id="" className='border-2 border-gray-400 h-[5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'></textarea>
+                    <textarea name="description" id="" onChange={handleChange} className='border-2 border-gray-400 h-[5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]'></textarea>
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Choose Image</label><br />
-                    <input type="file" onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
+                    <input type="file" name='image' onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
                 </div>
             </div>
             <div>
-                <button className=' h-[4rem] w-[15rem] rounded-[5px] mt-[2rem] ml-[32rem] bg-green-500 cursor-pointer font-bold text-white text-2xl'>Add</button>
+                <button onClick={handleClick} className=' h-[4rem] w-[15rem] rounded-[5px] mt-[2rem] ml-[32rem] bg-green-500 cursor-pointer font-bold text-white text-2xl'>Add</button>
             </div>
 
         </div>

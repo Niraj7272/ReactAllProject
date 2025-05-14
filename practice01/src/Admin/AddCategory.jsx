@@ -33,7 +33,7 @@ const AddCategory = () => {
 
   return (
     <div className='bg-transparent backdrop-blur-sm h-full w-full fixed'>
-        <div className='bg-white h-[22rem] w-[40rem] mt-[7rem]  ml-[15rem]'>
+        <div className='bg-white h-[22rem] w-[40rem] mt-[10rem]  ml-[15rem]'>
                 <h1 onClick={() => { setPop(false);
           }} className='bg-gray-400 text-red-600 font-bold w-[30px] h-[30px] text-[1.2rem] pl-[6px] ml-[38rem] cursor-pointer'>X</h1>
                 <h1 className='text-orange-600 font-bold text-[2rem] ml-[13rem]'>Add Category</h1>
