@@ -17,6 +17,9 @@ const AddProduct = () => {
     const handleChange = (e) => {
         console.log({...data, [e.target.name]: e.target.value});
     }
+    const handleFile = (e) => {
+        console.log({...data, [e.target.name]: e.target.file[0]});
+    }
 
     const handleClick = () => {
 
