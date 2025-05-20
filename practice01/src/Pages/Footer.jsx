@@ -45,6 +45,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div >
+        <p className='text-gray-500 flex justify-center'>Copyright&copy; 2082 All rights reserved | Design By Niraj Chaudhary</p>
+      </div>
     </div>
   )
 }
