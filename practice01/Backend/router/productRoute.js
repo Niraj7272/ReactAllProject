@@ -1,8 +1,8 @@
 import express from "express";
+import upload from "../middleWare/multerConfig.js";
 import { addProduct } from "../Controller/product.js";
+const router = express.Router();
 
-const route = express.Router();
+router.post("/add", upload.single("image"), addProduct);
 
-route.post("/add_Product",addProduct);
-
-export default route;
+export default router;

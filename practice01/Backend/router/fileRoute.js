@@ -3,6 +3,6 @@ import { insertImage } from "../Controller/file";
 
 const route = express.Router();
 
-route.post("/insert-image", upload.single("image"),insertImage);
+route.post("/insert-image", upload.single("image"),insertImage);//ctrl sp
 
 export default route;
