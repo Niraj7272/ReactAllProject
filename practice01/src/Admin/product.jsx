@@ -47,9 +47,39 @@ const Product= () => {
             </div>
         </div>
         
-        <div className='bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem]'>
-            <h1>Product List</h1>
-            <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] w-[7rem] pl-[2rem] font-bold text-white cursor-pointer ml-[63rem]'>Add</button>
+        <div className='bg-gray-200 h-[30rem] w-[70rem] mt-[2rem] ml-[2rem]'>
+            <div className='flex'>
+                <h1 className='font-bold text-[1.5rem] text-blue-800 pl-[25rem] mt-[1rem] bg-white h-[2.5rem] w-[55rem] rounded-2xl ml-[2rem]'>Product List</h1>
+                <button onClick={()=>{setPop(true)}} className='bg-green-600 h-[2rem] mt-[1rem] w-[7.5rem] pl-[1rem] font-bold text-white cursor-pointer ml-[4rem]'>Add</button>
+            </div>
+            <div className='bg-white h-auto w-[66rem] m-[2rem] pl-[3rem] pt-[1rem]'>
+                <table>
+                    <thead className='text-gray-500'>
+                        <tr>
+                            <th>SN</th>
+                            <th className='pl-[3rem]'>Name</th>
+                            <th className='pl-[8rem]'>Price</th>
+                            <th className='pl-[3rem]'>Stock</th>
+                            <th className='pl-[3rem]'>Category</th>
+                            <th className='pl-[5rem]'>Description</th>
+                            <th className='pl-[7rem]'>Image</th>
+                            <th className='pl-[6rem]'>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         </div>
     </div>

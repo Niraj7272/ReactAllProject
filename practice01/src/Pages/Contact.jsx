@@ -10,7 +10,16 @@ const Contact = () => {
           </div>
       </div>
       <div>
-        <h1>Let's Start a Conversation</h1>
+        <h1 className='ml-[29rem] text-[2rem] font-bold text-gray-500'>Let's Start a Conversation</h1>
+        <div className='flex justify-between'>
+          <div className='ml-[5rem]'>
+            <h1 className='font-bold text-[2rem] '>How TO Find Us</h1>
+            <p className=''>hello fsdfufh duhdc </p>
+          </div>
+          <div className='mr-[10rem]'>
+            <h1 className='font-bold text-[2rem]'>Get IN Touch</h1>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../Context/contextCreateandProvide';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const [data, setData] = useState([]);
-    const [value, setvalue] = useState({
-        productTitle: "",
+    const [value, setValue] = useState({
+        product_title: "",
         price: "",
         stock: "",
         category: "",
@@ -15,14 +16,34 @@ const AddProduct = () => {
     const {pop, setPop } = useContext(MyContext);
 
     const handleChange = (e) => {
-        console.log({...data, [e.target.name]: e.target.value});
+        setValue({...value, [e.target.name]: e.target.value})
+        // console.log({...data, [e.target.name]: e.target.value});
     }
     const handleFile = (e) => {
-        console.log({...data, [e.target.name]: e.target.file[0]});
+        setValue({...value, [e.target.name]: e.target.files[0]});
     }
 
-    const handleClick = () => {
-
+    const handleClick = async(e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        for (let key in value) {
+            formData.append(key, value[key]);
+        }
+        try {
+            let result = await axios({
+                url:"http://localhost:2222/add_product",
+                method: "post",
+                data: formData,
+                headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+            })
+            toast.success(result.data.message);
+            setPop(false);
+        } catch (error) {
+             console.log(error);
+            alert("Data Inserted Failed");
+        }
     }
 
     const GetProduct = async() => {
@@ -51,7 +72,7 @@ const AddProduct = () => {
             <div className='ml-[3rem] mt-[2rem] flex gap-[2rem]'>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Product Title</label><br />
-                    <input type="text" onChange={handleChange} name='productTitle' className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
+                    <input type="text" onChange={handleChange} name='product_title' className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem]' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Price</label><br />
@@ -79,7 +100,7 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <label htmlFor="" className='text-[1.5rem] text-gray-700'>Choose Image</label><br />
-                    <input type="file" name='image' onChange={handleChange} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
+                    <input type="file" name='image' onChange={handleFile} className='border-2 border-gray-400 h-[2.5rem] w-[21rem] pl-[2rem] rounded-[5px] mt-[0.6rem] cursor-pointer' />
                 </div>
             </div>
             <div>
