@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import AddProduct from './AddProduct';
 import { MyContext } from '../Context/contextCreateandProvide';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash} from '@fortawesome/free-solid-svg-icons';
 
 const Product= () => {
 
@@ -98,7 +100,11 @@ const Product= () => {
                             <td className='pt-[1rem] pl-[3rem]'>{item.category}</td>
                             <td className='pt-[1rem] pl-[2rem]'>{item.description}</td>
                             <td className='pt-[1rem] pl-[5rem]'><img src={`http://localhost:2222/images/${item.image}`} alt="" height="50px" width="100px" /></td>
-                            <td className='pt-[1rem] pl-[3rem]'>DElete</td>
+                            <td className='pt-[1rem] pl-[3rem]'>
+                                <button>
+                                    <FontAwesomeIcon icon={ faTrash} style={{color: "#ce0912",}} />
+                                </button>|
+                            </td>
                         </tr>
                     </tbody>
                        )
