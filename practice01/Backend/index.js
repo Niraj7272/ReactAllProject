@@ -15,6 +15,7 @@ app.use(cors());
 app.use("/",categoryRoute);
 app.use("/", userRoute);
 app.use("/",productRoute);
+app.use('/images', express.static('public/images'));
 
 
 app.listen(port,()=>{

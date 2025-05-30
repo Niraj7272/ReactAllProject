@@ -1,11 +1,32 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import AddProduct from './AddProduct';
 import { MyContext } from '../Context/contextCreateandProvide';
+import axios from 'axios';
 
 const Product= () => {
 
     const {pop, setPop} = useContext(MyContext);
+    const [data, setData] = useState([]);
+
+    //read product
+    const GetProduct = async() => {
+        try {
+            let result = await axios({
+                url: `http://localhost:2222/read_product`,
+                method: "get",
+            });
+            console.log(result.data);
+            setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>{
+        GetProduct();
+        console.log(data);
+    },[]);
 
   return (
     <div className='bg-white h-screen w-screen flex'>
@@ -57,27 +78,31 @@ const Product= () => {
                     <thead className='text-gray-500'>
                         <tr>
                             <th>SN</th>
-                            <th className='pl-[3rem]'>Name</th>
-                            <th className='pl-[8rem]'>Price</th>
+                            <th className=''>Name</th>
+                            <th className='pl-[3rem]'>Price</th>
                             <th className='pl-[3rem]'>Stock</th>
                             <th className='pl-[3rem]'>Category</th>
                             <th className='pl-[5rem]'>Description</th>
-                            <th className='pl-[7rem]'>Image</th>
-                            <th className='pl-[6rem]'>Action</th>
+                            <th className='pl-[5rem]'>Image</th>
+                            <th className='pl-[5rem]'>Action</th>
                         </tr>
                     </thead>
+                    {data.map((item,i) =>{
+                return(
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td className='pt-[1rem]'>{1+i}</td>
+                            <td className='pt-[1rem] pl-[1.5rem]'>{item.product_title}</td>
+                            <td className='pt-[1rem] pl-[3rem]'>{item.price}</td>
+                            <td className='pt-[1rem] pl-[3rem]'>{item.stock}</td>
+                            <td className='pt-[1rem] pl-[3rem]'>{item.category}</td>
+                            <td className='pt-[1rem] pl-[2rem]'>{item.description}</td>
+                            <td className='pt-[1rem] pl-[5rem]'><img src={`http://localhost:2222/images/${item.image}`} alt="" height="50px" width="100px" /></td>
+                            <td className='pt-[1rem] pl-[3rem]'>DElete</td>
                         </tr>
                     </tbody>
+                       )
+                    })}
                 </table>
             </div>
         </div>

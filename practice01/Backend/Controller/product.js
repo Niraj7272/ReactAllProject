@@ -24,7 +24,7 @@ export const  readProduct = (req, res) => {
     const q = `SELECT * FROM product`;
     db.query(q,(err, result) => {
         if (err) return res.status(500).json({error: err.message})
-        return res.status(200).json({result})
+        return res.status(200).json(result)
     });
 }
 
