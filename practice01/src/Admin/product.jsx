@@ -1,14 +1,17 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import AddProduct from './AddProduct';
 import { MyContext } from '../Context/contextCreateandProvide';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
 
 const Product= () => {
 
     const {pop, setPop} = useContext(MyContext);
+    let params = useParams();
+    let id = params.id;
     const [data, setData] = useState([]);
 
     //read product
@@ -20,6 +23,19 @@ const Product= () => {
             });
             console.log(result.data);
             setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    //Delete Product
+    const DeleteProduct = async(id)=>{
+        try {
+            let result = await axios({
+                url:`http://localhost:2222/delete_product/${id}`,
+                method: "delete",
+            })
+            toast.success(result.data.message);
         } catch (error) {
             console.log(error);
         }
@@ -101,7 +117,9 @@ const Product= () => {
                             <td className='pt-[1rem] pl-[2rem]'>{item.description}</td>
                             <td className='pt-[1rem] pl-[5rem]'><img src={`http://localhost:2222/images/${item.image}`} alt="" height="50px" width="100px" /></td>
                             <td className='pt-[1rem] pl-[3rem]'>
-                                <button>
+                                <button className='cursor-pointer' onClick={()=>{
+                                    DeleteProduct(item.id);
+                                }}>
                                     <FontAwesomeIcon icon={ faTrash} style={{color: "#ce0912",}} />
                                 </button>|
                             </td>
