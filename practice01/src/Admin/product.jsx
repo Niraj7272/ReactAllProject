@@ -35,6 +35,7 @@ const Product= () => {
                 url:`http://localhost:2222/delete_product/${id}`,
                 method: "delete",
             })
+            GetProduct();
             toast.success(result.data.message);
         } catch (error) {
             console.log(error);
@@ -58,7 +59,7 @@ const Product= () => {
                 <div className='mt-[1.3rem]'>
                     <h1><NavLink to="/dashboard">Dashboard</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/product" className='bg-gray-600 p-[0.5rem]'>Product</NavLink></h1>
-                    <h1 className='mt-[1.5rem]'><NavLink to="/costomer">Costomer</NavLink></h1>
+                    <h1 className='mt-[1.5rem]'><NavLink to="/costomer">Customer</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/order">Order</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/category">Category</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/message">Message</NavLink></h1>

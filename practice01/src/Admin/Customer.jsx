@@ -34,9 +34,9 @@ const Dashboard = () => {
             <div className='text-white font-semibold ml-[2rem]'>
                 <h1 className='font-bold text-[1.1rem]'>Menu</h1>
                 <div className='mt-[1.3rem]'>
-                    <h1><NavLink to="/dashboard" className='bg-gray-600 p-[0.5rem]'>Dashboard</NavLink></h1>
+                    <h1><NavLink to="/dashboard">Dashboard</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/product" className=''>Product</NavLink></h1>
-                    <h1 className='mt-[1.5rem]'><NavLink to="/customer">Customer</NavLink></h1>
+                    <h1 className='mt-[1.5rem] bg-gray-600 p-[0.5rem]'><NavLink to="/costomer">Customer</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/order">Order</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/category">Category</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/message">Message</NavLink></h1>
@@ -64,7 +64,7 @@ const Dashboard = () => {
         </div>
         <div className='bg-gray-200 h-[26rem] w-[67rem] ml-[2rem] mt-[3rem] pt-[1rem]'>
             <div className='bg-white h-[2.5rem] mt-[1rem] w-[63rem] ml-[2rem] rounded-2xl'>
-                <h1 className='text-blue-900 opacity-70 font-bold text-[1.5rem] pl-[30rem] '>User List</h1>
+                <h1 className='text-blue-900 opacity-70 font-bold text-[1.5rem] pl-[30rem] '>Customer List</h1>
             </div>
             <div className='bg-white mt-[2rem] h-auto w-[63rem] ml-[2rem] pl-[3rem] pt-[1rem]'>
                 <table>
@@ -73,6 +73,7 @@ const Dashboard = () => {
                         <th>SN</th>
                         <th className='pl-[10rem]'>Name</th>
                         <th className='pl-[10rem]'>Email</th>
+                        <th className='pl-[10rem]'>Action</th>
                         </tr>
                     </thead>
                     {data.map((item,i)=>{
@@ -82,6 +83,7 @@ const Dashboard = () => {
                         <td className='pt-[1.5rem] pl-[0.5rem]'>{i+1}</td>
                         <td className='pt-[1.5rem] pl-[7rem]'>{item.name}</td>
                         <td className='pt-[1.5rem] pl-[10rem]'>{item.email}</td>
+                        <td className='pt-[1.5rem] pl-[10rem]'>Delete|Update</td>
                         </tr>
                     </tbody>
                     );

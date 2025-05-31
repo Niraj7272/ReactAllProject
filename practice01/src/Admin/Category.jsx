@@ -39,7 +39,7 @@ const Category= () => {
                 <div className='mt-[1.3rem]'>
                     <h1><NavLink to="/dashboard">Dashboard</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/product">Product</NavLink></h1>
-                    <h1 className='mt-[1.5rem]'><NavLink to="/costomer">Costomer</NavLink></h1>
+                    <h1 className='mt-[1.5rem]'><NavLink to="/costomer">Customer</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/order">Order</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/category" className='bg-gray-600 p-[0.5rem]'>Category</NavLink></h1>
                     <h1 className='mt-[1.5rem]'><NavLink to="/message">Message</NavLink></h1>

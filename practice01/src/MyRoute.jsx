@@ -11,6 +11,7 @@ import AddProduct from './Admin/AddProduct'
 import Product from './Admin/product'
 import AddCategory from './Admin/AddCategory'
 import Category from './Admin/Category'
+import Customer from './Admin/Customer'
 import Footer from './Pages/Footer'
 
 const MyRoute = () => {
@@ -56,6 +57,10 @@ const MyRoute = () => {
             {
                 path:"/dashboard",
                 element:<Dashboard/>
+            },
+            {
+                path:"/customer",
+                element:<Customer/>
             },
             {
                 path:"/product",
