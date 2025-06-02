@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { data, NavLink } from 'react-router-dom'
+import { PiUsersThreeFill } from "react-icons/pi";
 
 const Dashboard = () => {
 
@@ -61,6 +62,9 @@ const Dashboard = () => {
                     <h1 className=' bg-gray-200 mt-[3rem] h-[3rem] w-[10rem] rounded-2xl ml-[2rem] pl-[3rem] pt-[0.7rem] font-bold text-gray-600'>Log Out</h1>
                 </NavLink>
             </div>
+        </div>
+        <div>
+            <PiUsersThreeFill className='bg-blue-300 h-[5rem] w-[6rem]'/>
         </div>
         <div className='bg-gray-200 h-[26rem] w-[67rem] ml-[2rem] mt-[3rem] pt-[1rem]'>
             <div className='bg-white h-[2.5rem] mt-[1rem] w-[63rem] ml-[2rem] rounded-2xl'>
