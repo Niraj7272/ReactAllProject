@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { data, NavLink } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { toast } from "react-toastify";
 
 const Customer = () => {
   const [data, setData] = useState([]);
@@ -20,6 +21,20 @@ const Customer = () => {
       console.log(error);
     }
   };
+
+  //delete user
+  const DeleteUser = async (id) => {
+    try {
+        let result = await axios({
+            url: `http://localhost:2222/delete_user/${id}`,
+            method: "delete",
+        })
+        toast.success(result.data.message);
+        GetUser();
+    } catch (error) {
+        console.log(error);
+    }
+  }
 
   useEffect(() => {
     GetUser();
@@ -120,7 +135,7 @@ const Customer = () => {
                         <button
                           className="cursor-pointer"
                           onClick={() => {
-                    
+                            DeleteUser(item.iduser);
                           }}
                         >
                           <MdDelete className="text-red-700 h-[1.6rem] w-[2rem] cursor-pointer" />

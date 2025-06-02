@@ -63,7 +63,7 @@ const Product = () => {
               </NavLink>
             </h1>
             <h1 className="mt-[1.5rem]">
-              <NavLink to="/costomer">Customer</NavLink>
+              <NavLink to="/customer">Customer</NavLink>
             </h1>
             <h1 className="mt-[1.5rem]">
               <NavLink to="/order">Order</NavLink>
