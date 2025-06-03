@@ -1,72 +1,45 @@
-import React from 'react'
+import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <img src="src/assets/shoppingwebsiteimagefront.jpg" alt="" className='w-screen h-[30rem] absolute '/>
-      <div className='relative ml-[1.5rem] pt-[20rem] flex gap-[1.5rem]'>
-        <div className='bg-white h-[18rem] w-[15rem] '>
-        <h1 className='font-bold ml-[5rem] mt-[0.5rem]'>Clothing</h1>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
+    <div className="h-[2000px] relative">
+      <div className="sticky top-0 z-10">
+        <img
+          src="src/assets/red-wine-bottle-wine-glass-burgundy-background_884546-2883.jpg"
+          alt=""
+          className="h-[32.8rem] ml-[1.5rem] bg-white"
+        />
+      </div>
+      <div className="relative z-20 mt-[-25rem] px-6">
+        <div className="bg-transparent h-[30rem] w-screen inline-block ml-[4rem]">
+          <h4 className="text-white text-[1rem]">Uncork the New Elegance</h4>
+          <h1 className="text-white text-[3rem] w-[40rem] font-bold">
+            Introducing our latest wine collection
+          </h1>
+          <h3 className="text-white text-[1.2rem] w-[40rem]">
+            Experience bold flavors and timeless craftsmanship with every pour
+            of our newest vintage selection
+          </h3>
+          <button className="bg-white mt-[3rem] h-[2.5rem] w-[9rem] cursor-pointer hover:text-blue-400">
+            SHOP NOW
+          </button>
         </div>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        </div>
-
-        <div className='bg-white h-[18rem] w-[15rem] '>
-        <h1 className='font-bold ml-[5rem] mt-[0.5rem]'>Clothing</h1>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        </div>
-
-        <div className='bg-white h-[18rem] w-[15rem] '>
-        <h1 className='font-bold ml-[5rem] mt-[0.5rem]'>Clothing</h1>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        </div>
-
-        <div className='bg-white h-[18rem] w-[15rem] '>
-        <h1 className='font-bold ml-[5rem] mt-[0.5rem]'>Clothing</h1>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        </div>
-
-        <div className='bg-white h-[18rem] w-[15rem] '>
-        <h1 className='font-bold ml-[5rem] mt-[0.5rem]'>Clothing</h1>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
-        <div className='flex'>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-          <img src="src/assets/tshirtblack.jpg" alt="" className='h-[6rem] ml-[1rem] mt-[1rem]'/>
-        </div>
+        <div className="bg-white h-[50rem] w-screen inline-block p-4">
+          <div className="flex flex-col items-center justify-center p-4 text-center">
+            <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
+            <h1 className="text-gray-800 font-bold text-[2.5rem]">Trending Now</h1>
+          </div>
+          <div className="flex gap-[2rem]">
+            <img src="src/assets/nikeairforce.jpeg" alt="" />
+            <img src="src/assets/mackbook.jpeg" alt="" />
+            <img src="src/assets/merlotveneto.jpeg" alt="" />
+            <img src="src/assets/images (4).jpeg" alt="" />
+            <img src="src/assets/iphone12.jpeg" alt="" />
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
