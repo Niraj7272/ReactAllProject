@@ -24,7 +24,7 @@ const Home = () => {
             SHOP NOW
           </button>
         </div>
-        <div className="bg-white h-[50rem] w-screen inline-block p-4">
+        <div className="bg-white h-[60rem] w-screen inline-block p-4">
           <div className="flex flex-col items-center justify-center p-4 text-center">
             <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
             <h1 className="text-gray-800 font-bold text-[2.5rem]">Trending Now</h1>
@@ -36,6 +36,18 @@ const Home = () => {
             <img src="src/assets/images (4).jpeg" alt="" />
             <img src="src/assets/iphone12.jpeg" alt="" />
           </div>
+          <div className="flex flex-col items-center justify-center text-center mt-[7rem]">
+            <h1 className="text-gray-500">SHOP</h1>
+            <h1 className="text-gray-800 font-bold text-[2.5rem]">Best Selling</h1>
+          </div>
+          <div className="flex gap-[2rem]">
+            <img src="src/assets/iphone12.jpeg" alt="" />
+            <img src="src/assets/images (4).jpeg" alt="" />
+            <img src="src/assets/mackbook.jpeg" alt="" />
+            <img src="src/assets/nikeairforce.jpeg" alt="" />
+            <img src="src/assets/merlotveneto.jpeg" alt="" />
+          </div>
+
         </div>
       </div>
     </div>
