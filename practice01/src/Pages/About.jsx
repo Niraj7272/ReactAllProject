@@ -1,4 +1,8 @@
 import React from "react";
+import { TbTruckDelivery } from "react-icons/tb";
+import { FaCartFlatbedSuitcase } from "react-icons/fa6";
+import { GiReturnArrow } from "react-icons/gi";
+import Footer from "./Footer";
 
 const About = () => {
   return (
@@ -50,9 +54,10 @@ const About = () => {
             </div>
           </div>
           <div className="">
-            <img src="src/assets/353504.jpg" alt=""  className="relative"/>
+            <img src="src/assets/353504.jpg" alt="" className="relative" />
             <div className="absolute mt-[-35rem] text-white p-5 pl-[7rem]">
-              <h1 className="text-[3rem] font-bold">About Our Products</h1><hr className="w-[15rem] ml-[7rem] mt-[2rem]" />
+              <h1 className="text-[3rem] font-bold">About Our Products</h1>
+              <hr className="w-[15rem] ml-[7rem] mt-[2rem]" />
               <p className="text-[1.5rem] w-[40rem] mt-[2rem]">
                 About Our Products Proin at velit sed elit varius porttitor. Ut
                 a suscipit quam, eu congue odio. Sed eget viverra est. Vivamus
@@ -60,8 +65,49 @@ const About = () => {
                 lacinia mauris
               </p>
             </div>
-            <div className="bg-white h-screen  w-[82.4rem] p-5">
-              <h1 className="text-[1.5rem] font-semibold text-gray-500 ml-[1rem] mt-[3rem]">WHY CHOOSE US</h1><hr className="text-pink-300 w-[10rem] ml-[2rem] mt-[1rem]"/>
+            <div className="bg-white h-[20rem]  w-[82.4rem] p-5 flex mt-[3rem] gap-[5rem]">
+              <div>
+                <h1 className="text-[1.5rem] font-semibold text-gray-500 ml-[1rem]">
+                  WHY CHOOSE US
+                </h1>
+                <hr className="text-pink-300 w-[10rem] ml-[2rem] mt-[1rem]" />
+              </div>
+              <div>
+                <div className="ml-[4rem] flex">
+                  <TbTruckDelivery className="text-[3rem] p-2 bg-blue-400 rounded-[2rem] mr-3 text-white" />
+                  <h1 className="text-[2rem] font-semibold text-gray-600">
+                    Fast Delivery
+                  </h1>
+                </div>
+                <p className="w-[10rem] ml-[8rem] text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis.
+                </p>
+              </div>
+              <div>
+                <div className=" flex">
+                  <FaCartFlatbedSuitcase className="text-[3rem] p-2 bg-blue-400 rounded-[2rem] mr-3 text-white" />
+                  <h1 className="text-[2rem] font-semibold text-gray-600">
+                    Free Shipping
+                  </h1>
+                </div>
+                <p className="w-[10rem] ml-[4rem] text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis.
+                </p>
+              </div>
+              <div>
+                <div className="flex">
+                  <GiReturnArrow className="text-[3rem] p-2 bg-blue-400 rounded-[2rem] mr-3 text-white" />
+                  <h1 className="text-[2rem] font-semibold text-gray-600">
+                    Easy Returns
+                  </h1>
+                </div>
+                <p className="w-[10rem] ml-[4rem] text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  elit tellus, luctus nec ullamcorper mattis.
+                </p>
+              </div>
             </div>
           </div>
         </div>
