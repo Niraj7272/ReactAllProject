@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryDisplay from "./CategoryDisplay";
 import Footer from "./Footer";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   return (
@@ -59,7 +60,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-[9000px] relative">
+      <div className="h-[3000px] relative">
         <div className="sticky top-0 z-10">
           <img
             src="src/assets/Visit-Niagara-Falls-3-1.jpg"
@@ -68,7 +69,7 @@ const Home = () => {
           />
         </div>
         <div className="relative z-20 mt-[-4rem] px-6">
-          <div className="bg-transparent h-[30rem] w-screen inline-block ml-[4rem]">
+          <div className="bg-transparent h-[40rem] w-screen inline-block ml-[4rem]">
             <h3 className="text-white text-[1rem] w-[30rem]">NEW COLLECTION</h3>
             <h1 className="text-white font-bold text-[3rem] w-[30rem]">
               Raise a Glass to Something Special
@@ -82,35 +83,8 @@ const Home = () => {
             </button>
           </div>
           <div className="bg-white h-[106rem] w-screen inline-block pt-4">
-            <CategoryDisplay/>
-            <div className="flex flex-col items-center justify-center p-4 text-center mt-[4rem]">
-              <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
-              <h1 className="text-gray-800 font-bold text-[2.5rem]">
-                Trending Now
-              </h1>
-            </div>
-            <div className="flex gap-[2rem] h-[15rem]">
-              <img src="src/assets/nikeairforce.jpeg" alt="" />
-              <img src="src/assets/mackbook.jpeg" alt="" />
-              <img src="src/assets/merlotveneto.jpeg" alt="" />
-              <img src="src/assets/images (4).jpeg" alt="" />
-              <img src="src/assets/iphone12.jpeg" alt="" />
-            </div>
-            <div className="flex flex-col items-center justify-center text-center mt-[7rem]">
-              <h1 className="text-gray-500">SHOP</h1>
-              <h1 className="text-gray-800 font-bold text-[2.5rem]">
-                Best Selling
-              </h1>
-            </div>
-            <div className="flex gap-[2rem] h-[15rem] w-[81.8rem] mt-[5rem]">
-              <img src="src/assets/iphone12.jpeg" alt="" />
-              <img src="src/assets/images (4).jpeg" alt="" />
-              <img src="src/assets/mackbook.jpeg" alt="" />
-              <img src="src/assets/nikeairforce.jpeg" alt="" />
-              <img src="src/assets/merlotveneto.jpeg" alt="" />
-            </div>
             <div className="w-[81.8rem]">
-                <Footer/>
+                <AboutUs/>
             </div>
           </div>
         </div>
