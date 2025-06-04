@@ -60,6 +60,9 @@ const About = () => {
                 lacinia mauris
               </p>
             </div>
+            <div className="bg-white h-screen  w-[82.4rem] p-5">
+              <h1 className="text-[1.5rem] font-semibold text-gray-500 ml-[1rem] mt-[3rem]">WHY CHOOSE US</h1><hr className="text-pink-300 w-[10rem] ml-[2rem] mt-[1rem]"/>
+            </div>
           </div>
         </div>
       </div>
