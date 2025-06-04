@@ -1,9 +1,11 @@
 import React from "react";
+import CategoryDisplay from "./CategoryDisplay";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
     <div>
-      <div className="h-[1130px] relative">
+      <div className="h-[1230px] relative">
         <div className="sticky top-0 z-10">
           <img
             src="src/assets/red-wine-bottle-wine-glass-burgundy-background_884546-2883.jpg"
@@ -26,27 +28,7 @@ const Home = () => {
             </button>
           </div>
           <div className="bg-white h-[75rem] w-screen inline-block pt-4">
-            <div className="flex gap-[1.8rem]">
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              <div className="border-[2px] border-gray-300 h-[5rem] w-[12rem] flex items-center justify-center p-4 text-center font-bold cursor-pointer">
-                <h1>Jeense</h1>
-              </div>
-              
-            </div>
+            <CategoryDisplay/>
             <div className="flex flex-col items-center justify-center p-4 text-center mt-[4rem]">
               <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
               <h1 className="text-gray-800 font-bold text-[2.5rem]">
@@ -99,14 +81,15 @@ const Home = () => {
               SHOP NOW
             </button>
           </div>
-          <div className="bg-white h-[60rem] w-screen inline-block p-4">
-            <div className="flex flex-col items-center justify-center p-4 text-center">
+          <div className="bg-white h-[75rem] w-screen inline-block pt-4">
+            <CategoryDisplay/>
+            <div className="flex flex-col items-center justify-center p-4 text-center mt-[4rem]">
               <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
               <h1 className="text-gray-800 font-bold text-[2.5rem]">
                 Trending Now
               </h1>
             </div>
-            <div className="flex gap-[2rem]">
+            <div className="flex gap-[2rem] h-[15rem]">
               <img src="src/assets/nikeairforce.jpeg" alt="" />
               <img src="src/assets/mackbook.jpeg" alt="" />
               <img src="src/assets/merlotveneto.jpeg" alt="" />
@@ -119,12 +102,15 @@ const Home = () => {
                 Best Selling
               </h1>
             </div>
-            <div className="flex gap-[2rem]">
+            <div className="flex gap-[2rem] h-[15rem] w-[81.8rem] mt-[5rem]">
               <img src="src/assets/iphone12.jpeg" alt="" />
               <img src="src/assets/images (4).jpeg" alt="" />
               <img src="src/assets/mackbook.jpeg" alt="" />
               <img src="src/assets/nikeairforce.jpeg" alt="" />
               <img src="src/assets/merlotveneto.jpeg" alt="" />
+            </div>
+            <div className="w-[81.8rem]">
+                <Footer/>
             </div>
           </div>
         </div>

@@ -5,10 +5,15 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="bg-gray-400 h-[20rem] w-screen flex justify-between pt-[3rem] text-[1.3rem] pr-[5rem]">
+    <div className="bg-pink-100 mt-[5rem]">
+      <div className="flex p-10 pt-[3rem]">
+        <h1 className="text-gray-800 font-bold text-2xl">Subscribe to our newsletter</h1>
+        <input type="email" placeholder="Your email address..." className="bg-white h-[3rem] w-[30rem] pl-[2rem] ml-[15rem]"/>
+        <button className="bg-gray-600 text-white ml-[2rem] w-[10rem]">SUBSCRIBE</button>
+      </div><hr className="text-gray-400"/>
+      <div className=" h-[20rem] w-screen flex justify-between pt-[3rem] text-[1.3rem] pr-[5rem]">
         <div className="ml-[5rem]">
-          <h1 className="font-bold text-white ">ABOUT</h1>
+          <h1 className="font-bold text-black ">ABOUT</h1>
           <p className="w-[20rem] text-[1rem] text-gray-800">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
             temporibus necessitatibus autem dolorum obcaecati, doloremque
@@ -17,7 +22,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h1 className="font-bold text-white ">CATEGORIES</h1>
+          <h1 className="font-bold text-black ">CATEGORIES</h1>
           <div className="text-[1rem]  text-gray-800">
             <li>
               <NavLink>Clothing</NavLink>
@@ -40,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h1 className="font-bold text-white ">INFORMATIONS</h1>
+          <h1 className="font-bold text-black ">INFORMATIONS</h1>
           <div className="text-[1rem]  text-gray-800">
             <li>
               <NavLink>About Us</NavLink>
@@ -63,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h1 className="font-bold text-white ">CONTACT</h1>
+          <h1 className="font-bold text-black ">CONTACT</h1>
           <div className="text-[1rem]  text-gray-800">
             <h1>Address: Duhabi-9, Sunsari Nepal</h1>
             <br />
@@ -78,9 +83,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <p className="text-gray-500 flex justify-center">
+      </div><hr className="text-gray-400"/>
+      <div className=" flex h-[6rem] justify-center items-center text-center">
+        <p className="text-gray-600 flex justify-center">
           Copyright&copy; 2082 All rights reserved | Design By Niraj Chaudhary
         </p>
       </div>
