@@ -21,7 +21,6 @@ const MyRoute = () => {
             <div>
                 <Navbar/>
                 <Outlet/>
-                <Footer/>
             </div>
         )
     }

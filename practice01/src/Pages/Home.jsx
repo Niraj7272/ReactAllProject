@@ -81,7 +81,7 @@ const Home = () => {
               SHOP NOW
             </button>
           </div>
-          <div className="bg-white h-[75rem] w-screen inline-block pt-4">
+          <div className="bg-white h-[106rem] w-screen inline-block pt-4">
             <CategoryDisplay/>
             <div className="flex flex-col items-center justify-center p-4 text-center mt-[4rem]">
               <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
