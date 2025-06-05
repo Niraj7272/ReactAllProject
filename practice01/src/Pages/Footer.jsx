@@ -11,7 +11,7 @@ const Footer = () => {
         <input type="email" placeholder="Your email address..." className="bg-white h-[3rem] w-[30rem] pl-[2rem] ml-[15rem]"/>
         <button className="bg-gray-600 text-white ml-[2rem] w-[10rem]">SUBSCRIBE</button>
       </div><hr className="text-gray-400"/>
-      <div className=" h-[20rem] w-screen flex justify-between pt-[3rem] text-[1.3rem] pr-[5rem]">
+      <div className=" h-[20rem] flex justify-between pt-[3rem] text-[1.3rem] pr-[5rem]">
         <div className="ml-[5rem]">
           <h1 className="font-bold text-black ">ABOUT</h1>
           <p className="w-[20rem] text-[1rem] text-gray-800">

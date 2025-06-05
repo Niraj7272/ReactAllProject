@@ -102,7 +102,7 @@ const AboutUs = () => {
                 </p>
               </div>
               </div>
-              <div>
+              <div className='w-[82rem]'>
                 <Footer/>
               </div>
             </div>
