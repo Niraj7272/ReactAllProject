@@ -113,7 +113,7 @@ const Category = () => {
           </div>
         </div>
 
-        <div className="bg-gray-200 h-[20rem] w-[70rem] mt-[2rem] ml-[2rem] ">
+        <div className="bg-gray-200 h-auto pb-[2rem] w-[70rem] mt-[2rem] ml-[2rem] ">
           <div className="flex">
             <h1 className="font-bold text-[1.5rem] ml-[2rem] bg-white h-[2.5rem] w-[50rem] pl-[20rem] mt-[1rem] rounded-2xl text-blue-800">
               Category List
