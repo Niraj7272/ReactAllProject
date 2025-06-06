@@ -1,12 +1,34 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Detail = () => {
+    const [data, setData] = useState([]);
+
+    const GetDetail = async() => {
+        try {
+            let result = await axios({
+                url: `http://localhost:2222/readSpecific_product/${id}`,
+                method: "get",
+            })
+            console.log(result.data);
+            setData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+
+        useEffect(()=>{
+            GetDetail();
+        },[])
+    }
+
   return (
     <div>
+        
       <div className="bg-white h-screen w-screen flex">
+        {data.map((item,i)=>{
         <div>
           <img
-            src="src/assets/nikeairforce.jpeg"
+            src={`http://localhost:2222/images/${item.image}`}
             alt=""
             className="h-[30rem] pt-[3rem] pl-[5rem] p-[2rem] "
           />
@@ -17,6 +39,7 @@ const Detail = () => {
             <img src="src/assets/nikeairforce.jpeg" alt="" />
           </div>
         </div>
+  })}
         <div className="mt-[4rem]">
           <h1 className="font-bold text-2xl text-gray-600">Nike Air Force</h1>
           <h2 className="font-bold text-2xl mt-[1rem] text-gray-500">
