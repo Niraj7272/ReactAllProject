@@ -2,6 +2,7 @@ import React from "react";
 import CategoryDisplay from "./CategoryDisplay";
 import Footer from "./Footer";
 import AboutUs from "./AboutUs";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -37,7 +38,10 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex gap-[2rem] h-[14rem]">
-              <img src="src/assets/nikeairforce.jpeg" alt="" />
+              <div className="">
+                    <img src="src/assets/nikeairforce.jpeg" alt=""/>
+                    <NavLink to="/Detail" className="bg-green-300  cursor-pointer hover:text-white">Detail</NavLink>
+              </div>
               <img src="src/assets/mackbook.jpeg" alt="" />
               <img src="src/assets/merlotveneto.jpeg" alt="" />
               <img src="src/assets/images (4).jpeg" alt="" />

@@ -13,6 +13,7 @@ import AddCategory from './Admin/AddCategory'
 import Category from './Admin/Category'
 import Customer from './Admin/Customer'
 import Footer from './Pages/Footer'
+import Detail from './Pages/Detail'
 
 const MyRoute = () => {
 
@@ -68,6 +69,10 @@ const MyRoute = () => {
             {
                 path: "/category",
                 element:<Category/>
+            },
+            {
+                path: "/Detail",
+                element:<Detail/>
             }
         ]
     )

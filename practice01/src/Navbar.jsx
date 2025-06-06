@@ -11,7 +11,7 @@ const Navbar = () => {
         </div>
         <div className='pl-[25rem] flex gap-[3rem] pt-[1.5rem]'>
             <div >
-              <input type="text" placeholder='Search' className='border-[1px] text-gray-700 h-[2rem] w-[20rem] bg-white pl-[2rem]' />
+              <input type="text" placeholder='Search' className='border-[1px] text-gray-700 h-[2rem] w-[20rem] bg-white pl-[2rem] rounded-2xl' />
             </div>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About Us</NavLink>
