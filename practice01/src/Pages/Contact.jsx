@@ -64,6 +64,7 @@ const Contact = () => {
           </button>
         </div>
       </div>
+      <div className="mt-[4rem] ml-[2rem]"><img src="src/assets/Screenshot 2025-06-08 140935.png" alt="" /></div>
       <div className="w-[80rem] ml-[2rem]">
         <Footer />
       </div>

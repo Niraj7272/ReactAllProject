@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CategoryDisplay from "./CategoryDisplay";
 import Footer from "./Footer";
 import AboutUs from "./AboutUs";
 import { NavLink } from "react-router-dom";
+import { MyContext } from "../Context/contextCreateandProvide";
+import axios from "axios";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const {sendId, setSendId} = useContext(MyContext);
+
+const GetProduct = async() => {
+  try {
+    let result = await axios({
+      url:`http://localhost:2222/read_product`,
+      method:"get",
+    })
+    console.log(result.data);
+    setData(result.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+useEffect(()=>{
+  GetProduct();
+},[])
+
   return (
     <div>
       <div className="h-[1230px] relative">
@@ -38,13 +60,19 @@ const Home = () => {
               </h1>
             </div>
             <div className="flex gap-[2rem] h-[14rem]">
+            {data.map((item,i)=>{
+              return(
+            
               <div className="">
-                    <img src="src/assets/nikeairforce.jpeg" alt=""/>
-                    <NavLink to="/Detail" className="bg-green-300  cursor-pointer hover:text-white">Detail</NavLink>
+                    {/* <img src="src/assets/nikeairforce.jpeg" alt=""/> */}
+                    <img src={`http://localhost:2222/images/${item.image}`} alt="" height="10rem" width="300rem" />
+                    <NavLink to="/Detail" onClick={setSendId(item.idproduct)} className="bg-green-300  cursor-pointer hover:text-white">Detail</NavLink>
               </div>
-              <img src="src/assets/mackbook.jpeg" alt="" />
+              )
+              })}
+              {/* <img src="src/assets/mackbook.jpeg" alt="" />
               <img src="src/assets/merlotveneto.jpeg" alt="" />
-              <img src="src/assets/images (4).jpeg" alt="" />
+              <img src="src/assets/images (4).jpeg" alt="" /> */}
               {/* <img src="src/assets/iphone12.jpeg" alt="" /> */}
             </div>
             <div className="flex flex-col items-center justify-center text-center mt-[7rem]">
