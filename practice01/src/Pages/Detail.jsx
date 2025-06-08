@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { MyContext } from "../Context/contextCreateandProvide";
 
 const Detail = () => {
     const [data, setData] = useState([]);
+    const {sendId,setSendId} = useContext(MyContext)
 
     const GetDetail = async() => {
         try {
             let result = await axios({
-                url: `http://localhost:2222/readSpecific_product/${id}`,
+                url: `http://localhost:2222/readSpecific_product/${sendId}`,
                 method: "get",
             })
             console.log(result.data);
@@ -26,19 +28,21 @@ const Detail = () => {
         
       <div className="bg-white h-screen w-screen flex">
         {data.map((item,i)=>{
+            return(
         <div>
           <img
             src={`http://localhost:2222/images/${item.image}`}
             alt=""
             className="h-[30rem] pt-[3rem] pl-[5rem] p-[2rem] "
           />
-          <div className="flex h-[6rem] ml-[5rem] gap-[0.5rem]">
+          {/* <div className="flex h-[6rem] ml-[5rem] gap-[0.5rem]">
             <img src="src/assets/nikeairforce.jpeg" alt="" />
             <img src="src/assets/nikeairforce.jpeg" alt="" />
             <img src="src/assets/nikeairforce.jpeg" alt="" />
             <img src="src/assets/nikeairforce.jpeg" alt="" />
-          </div>
+          </div> */}
         </div>
+        )
   })}
         <div className="mt-[4rem]">
           <h1 className="font-bold text-2xl text-gray-600">Nike Air Force</h1>

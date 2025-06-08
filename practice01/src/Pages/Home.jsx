@@ -8,24 +8,24 @@ import axios from "axios";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const {sendId, setSendId} = useContext(MyContext);
+  const { sendId, setSendId } = useContext(MyContext);
 
-const GetProduct = async() => {
-  try {
-    let result = await axios({
-      url:`http://localhost:2222/read_product`,
-      method:"get",
-    })
-    console.log(result.data);
-    setData(result.data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+  const GetProduct = async () => {
+    try {
+      let result = await axios({
+        url: `http://localhost:2222/read_product`,
+        method: "get",
+      });
+      console.log(result.data);
+      setData(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-useEffect(()=>{
-  GetProduct();
-},[])
+  useEffect(() => {
+    GetProduct();
+  }, []);
 
   return (
     <div>
@@ -52,7 +52,7 @@ useEffect(()=>{
             </button>
           </div>
           <div className="bg-white h-[75rem] w-[83rem] pl-3 inline-block pt-4">
-            <CategoryDisplay/>
+            <CategoryDisplay />
             <div className="flex flex-col items-center justify-center p-4 text-center mt-[4rem]">
               <h1 className="text-gray-500">POPULAR PRODUCTS</h1>
               <h1 className="text-gray-800 font-bold text-[2.5rem]">
@@ -60,15 +60,28 @@ useEffect(()=>{
               </h1>
             </div>
             <div className="flex gap-[2rem] h-[14rem]">
-            {data.map((item,i)=>{
-              return(
-            
-              <div className="">
+              {data.map((item, i) => {
+                return (
+                  <div className="">
                     {/* <img src="src/assets/nikeairforce.jpeg" alt=""/> */}
-                    <img src={`http://localhost:2222/images/${item.image}`} alt="" height="10rem" width="300rem" />
-                    <NavLink to="/Detail" onClick={setSendId(item.idproduct)} className="bg-green-300  cursor-pointer hover:text-white">Detail</NavLink>
-              </div>
-              )
+                    <img
+                      src={`http://localhost:2222/images/${item.image}`}
+                      alt=""
+                      height="10rem"
+                      width="300rem"
+                    />
+                    <NavLink
+                      to="/Detail"
+                      onClick={()=>{
+                        setSendId(item.idproduct);
+                        console.log(item.idproduct);
+                      }}
+                      className="bg-green-300  cursor-pointer hover:text-white"
+                    >
+                      Detail
+                    </NavLink>
+                  </div>
+                );
               })}
               {/* <img src="src/assets/mackbook.jpeg" alt="" />
               <img src="src/assets/merlotveneto.jpeg" alt="" />
@@ -116,7 +129,7 @@ useEffect(()=>{
           </div>
           <div className="bg-white h-[106rem]  inline-block pt-4">
             <div className="w-[81.8rem] ">
-                <AboutUs/>
+              <AboutUs />
             </div>
           </div>
         </div>
