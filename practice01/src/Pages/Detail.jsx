@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const Detail = () => {
     const [data, setData] = useState([]);
     const {idproduct} = useParams();
-    console.log({idproduct});
+    console.log(idproduct);
 
     const GetDetail = async() => {
         try {
