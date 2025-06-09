@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { MyContext } from "../Context/contextCreateandProvide";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
     const [data, setData] = useState([]);
-    const {sendId,setSendId} = useContext(MyContext)
+    const {idproduct} = useParams();
+    console.log({idproduct});
 
     const GetDetail = async() => {
         try {
             let result = await axios({
-                url: `http://localhost:2222/readSpecific_product/${sendId}`,
+                url: `http://localhost:2222/readSpecific_product/${idproduct}`,
                 method: "get",
             })
             console.log(result.data);
@@ -25,7 +26,6 @@ const Detail = () => {
 
   return (
     <div>
-        
       <div className="bg-white h-screen w-screen flex">
         {data.map((item,i)=>{
             return(

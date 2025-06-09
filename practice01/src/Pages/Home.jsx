@@ -2,13 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import CategoryDisplay from "./CategoryDisplay";
 import Footer from "./Footer";
 import AboutUs from "./AboutUs";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MyContext } from "../Context/contextCreateandProvide";
 import axios from "axios";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   const { sendId, setSendId } = useContext(MyContext);
+
+  // const handleClick = () => {
+  //   e.preventDefault();
+  //   try {
+
+  //   } catch (error) {
+
+  //   }
+  // }
 
   const GetProduct = async () => {
     try {
@@ -70,16 +80,24 @@ const Home = () => {
                       height="10rem"
                       width="300rem"
                     />
-                    <NavLink
+                    {/* <NavLink
                       to="/Detail"
                       onClick={()=>{
                         setSendId(item.idproduct);
-                        console.log(item.idproduct);
+                        // console.log(item.idproduct);
                       }}
                       className="bg-green-300  cursor-pointer hover:text-white"
                     >
                       Detail
-                    </NavLink>
+                    </NavLink> */}
+                    <button
+                      onClick={() => {
+                        navigate(`/Detail/${item.idproduct}`);
+                      }}
+                      className="bg-green-300  cursor-pointer hover:text-white"
+                    >
+                      Detail
+                    </button>
                   </div>
                 );
               })}

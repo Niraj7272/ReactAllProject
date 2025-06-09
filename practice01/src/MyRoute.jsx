@@ -71,7 +71,7 @@ const MyRoute = () => {
                 element:<Category/>
             },
             {
-                path: "/Detail",
+                path: "/Detail/:idproduct",
                 element:<Detail/>
             }
         ]
