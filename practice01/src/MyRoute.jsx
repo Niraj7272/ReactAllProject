@@ -14,6 +14,7 @@ import Category from './Admin/Category'
 import Customer from './Admin/Customer'
 import Footer from './Pages/Footer'
 import Detail from './Pages/Detail'
+import Shop from './Pages/Shop'
 
 const MyRoute = () => {
 
@@ -35,6 +36,10 @@ const MyRoute = () => {
                     {
                         path:"/",
                         element:<Home/>
+                    },
+                    {
+                        path:"/shop",
+                        element:<Shop/>
                     },
                     {
                         path:"/about",

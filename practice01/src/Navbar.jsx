@@ -9,11 +9,12 @@ const Navbar = () => {
           <h1 className='text-orange-600 ml-[1.3rem]'>E</h1>
           <h1 className='text-white'>Mart</h1>
         </div>
-        <div className='pl-[25rem] flex gap-[3rem] pt-[1.5rem]'>
+        <div className='pl-[20rem] flex gap-[3rem] pt-[1.5rem]'>
             <div >
               <input type="text" placeholder='Search' className='border-[1px] text-gray-700 h-[2rem] w-[20rem] bg-white pl-[2rem] rounded-2xl' />
             </div>
                 <NavLink to="/">Home</NavLink>
+                <NavLink to="/shop">Shop</NavLink>
                 <NavLink to="/about">About Us</NavLink>
                 <NavLink to="/contact">Contact Us</NavLink>
                 <NavLink to="/login">Login</NavLink>
